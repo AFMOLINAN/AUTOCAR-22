@@ -62,7 +62,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="0" Margin="27,42,23,30" Name="stackPanel1" >
-                    <Button  Content="Ficha Clienteee"  Height="30" Margin="0,0,0,10" />
+                    <Button  Content="Ficha Cliente"  Height="30" Margin="0,0,0,10" />
                     <Button Content="Ventas" Height="30" Margin="0,10"  />
                     <Button Content="Info Ventas" Height="30" Margin="0,10"  />
 
@@ -75,7 +75,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="1" Margin="27,42,23,30" Name="stackPanel2" >
-                    <Button  Content="Ficha Proveedor"  Height="30" Margin="0,0,0,10" />
+                    <Button  Content="Ficha Proveedor"  Height="30" Margin="0,0,0,10" Click="Proveedor" />
                     <Button Content="Compra" Height="30" Margin="0,10"  />
                     <Button Content="Info Compras" Height="30" Margin="0,10"  />
 
@@ -88,12 +88,12 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="2" Margin="27,42,23,30" Name="stackPanel3" >
-                    <Button  Content="Ficha Vehiculo"  Height="30" Margin="0,0,0,10"  />
+                    <Button  Content="Ficha Vehiculo"  Height="30" Margin="0,0,0,10" Click="Vehiculo"  />
                     <Button Content="Inventarios" Height="30" Margin="0,10" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="3">
-                    <Button  Content="Salir"  Height="30" Margin="0,30,10,30" Width="Auto"  />
+                    <Button  Content="Salir"  Height="30" Margin="0,30,10,30" Width="Auto" Click="Salir" />
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.ColumnSpan="4" Margin="10">

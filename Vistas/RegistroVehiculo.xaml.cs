@@ -18,7 +18,7 @@ namespace AUTOCAR.Vistas
     /// <summary>
     /// Lógica de interacción para RegistroVehiculo.xaml
     /// </summary>
-    public partial class RegistroVehiculo : Page
+    public partial class RegistroVehiculo : Window
     {
         public RegistroVehiculo()
         {

@@ -18,7 +18,7 @@ namespace AUTOCAR.Vistas
     /// <summary>
     /// Lógica de interacción para RegistroCliente.xaml
     /// </summary>
-    public partial class RegistroCliente : Page
+    public partial class RegistroCliente : Window
     {
         public RegistroCliente()
         {

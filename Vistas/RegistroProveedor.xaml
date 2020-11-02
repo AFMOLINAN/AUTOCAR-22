@@ -1,4 +1,4 @@
-﻿<Page x:Class="AUTOCAR.Vistas.RegistroProveedor"
+﻿<Window x:Class="AUTOCAR.Vistas.RegistroProveedor"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,7 +9,7 @@
       Title="RegistroProveedor">
 
 
-    <Page.Resources>
+    <Window.Resources>
         <Style TargetType="Button" >
             <Setter Property="Width" Value="135"/>
             <Setter Property="Height" Value="30" />
@@ -43,7 +43,7 @@
         </Style>
 
 
-    </Page.Resources>
+    </Window.Resources>
     <Grid Background="Orange">
         <Border Margin="10" BorderBrush="Black" BorderThickness="5,5,5,5" CornerRadius="8,8,8,8">
             <Grid>
@@ -99,4 +99,4 @@
             </Grid>
         </Border>
     </Grid>
-</Page>
+</Window>

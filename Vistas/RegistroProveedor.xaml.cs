@@ -13,21 +13,18 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace AUTOCAR.Vistas
 {
     /// <summary>
     /// Lógica de interacción para RegistroProveedor.xaml
     /// </summary>
-    public partial class RegistroProveedor : Page
+    public partial class RegistroProveedor : Window
     {
         public RegistroProveedor()
         {
             InitializeComponent();
         }
 
-        internal void Show()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

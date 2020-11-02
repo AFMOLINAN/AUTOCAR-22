@@ -14,6 +14,25 @@ namespace AUTOCAR
         {
             InitializeComponent();
         }
-        
+
+        private void Vehiculo(object sender, RoutedEventArgs e)
+        {
+            RegistroVehiculo RV = new RegistroVehiculo();
+            RV.Show();
+
+        }
+
+        private void Proveedor(object sender, RoutedEventArgs e)
+        {
+            RegistroProveedor RP = new RegistroProveedor();
+            RP.Show();
+
+        }
+
+
+        private void Salir(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
