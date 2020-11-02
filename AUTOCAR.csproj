@@ -146,8 +146,12 @@
     <Compile Include="Modelos\Vehiculo.cs" />
     <Compile Include="RelayCommand.cs" />
     <Compile Include="VistaModelo\Cliente.cs" />
+    <Compile Include="VistaModelo\ProveedorVM.cs" />
     <Compile Include="Vistas\RegistroCliente.xaml.cs">
       <DependentUpon>RegistroCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RegistroProveedor.xaml.cs">
+      <DependentUpon>RegistroProveedor.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\RegistroVehiculo.xaml.cs">
       <DependentUpon>RegistroVehiculo.xaml</DependentUpon>
@@ -167,6 +171,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Vistas\RegistroCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\RegistroProveedor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

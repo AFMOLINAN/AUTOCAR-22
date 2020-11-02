@@ -1,12 +1,15 @@
-﻿<Window x:Class="AUTOCAR.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:AUTOCAR"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
+﻿<Page x:Class="AUTOCAR.Vistas.RegistroProveedor"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AUTOCAR.Vistas"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="RegistroProveedor">
+
+
+    <Page.Resources>
         <Style TargetType="Button" >
             <Setter Property="Width" Value="135"/>
             <Setter Property="Height" Value="30" />
@@ -40,32 +43,27 @@
         </Style>
 
 
-    </Window.Resources>
+    </Page.Resources>
     <Grid Background="Orange">
         <Border Margin="10" BorderBrush="Black" BorderThickness="5,5,5,5" CornerRadius="8,8,8,8">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="12*" />
+                    <RowDefinition Height="10*" />
                     <RowDefinition Height="43*" />
                     <RowDefinition Height="23*" />
+                    <RowDefinition Height="15*" />
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="30*" />
+                    <ColumnDefinition Width="10*" />
                     <ColumnDefinition Width="30*" />
                     <ColumnDefinition Width="30*" />
                     <ColumnDefinition Width="15*" />
                 </Grid.ColumnDefinitions>
-                <StackPanel Grid.Row="0" Grid.Column="0">
-                    <StackPanel Orientation="Horizontal"  >
-                        <Label FontSize="30"  FontFamily="Arial" Margin="50,20,0,0" HorizontalContentAlignment="Center" Content="Clientes" Width="126" />
-                    </StackPanel>
-                </StackPanel>
-
+                
                 <StackPanel Grid.Row="1" Grid.Column="0" Margin="27,42,23,30" Name="stackPanel1" >
-                    <Button  Content="Ficha Clienteee"  Height="30" Margin="0,0,0,10" />
-                    <Button Content="Ventas" Height="30" Margin="0,10"  />
-                    <Button Content="Info Ventas" Height="30" Margin="0,10"  />
-
+                    <Label>
+                        
+                    </Label>
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="1">
@@ -75,12 +73,12 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="1" Margin="27,42,23,30" Name="stackPanel2" >
-                    <Button  Content="Ficha Proveedor"  Height="30" Margin="0,0,0,10" />
+                    <Button  Content="Ficha Proveedor"  Height="30" Margin="0,0,0,10"  />
                     <Button Content="Compra" Height="30" Margin="0,10"  />
                     <Button Content="Info Compras" Height="30" Margin="0,10"  />
 
                 </StackPanel>
-                
+
                 <StackPanel Grid.Row="0" Grid.Column="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label FontSize="30"  FontFamily="Arial" Margin="35,20,0,0"  Content="Vehiculos" Width="143" />
@@ -97,11 +95,8 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.ColumnSpan="4" Margin="10">
-                    <StackPanel.Background>
-                        <ImageBrush ImageSource="Imagenes\Logo.jpg" />
-                    </StackPanel.Background>
                 </StackPanel>
             </Grid>
         </Border>
     </Grid>
-</Window>
+</Page>
