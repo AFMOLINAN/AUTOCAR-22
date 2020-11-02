@@ -93,7 +93,7 @@
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="3">
-                    <Button  Content="Salir"  Height="30" Margin="0,30,10,30" Width="Auto"  />
+                    <Button  Content="SSSSSSalir"  Height="30" Margin="0,30,10,30" Width="Auto"  />
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" Grid.ColumnSpan="4" Margin="10">
