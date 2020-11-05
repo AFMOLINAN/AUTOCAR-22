@@ -19,8 +19,9 @@ namespace AUTOCAR.Modelos
         }
 
         [Key]
-        private int tipo_vehiculoId;
+        
         public int Tipo_VehiculoID { get { return tipo_vehiculoId; } set { if (tipo_vehiculoId != value) { tipo_vehiculoId = value; OnPropertyChanged(); } } }
+        private int tipo_vehiculoId;
 
         [StringLength(20)]
         private string tipo;

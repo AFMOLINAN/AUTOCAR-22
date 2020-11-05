@@ -3,12 +3,188 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:vm="clr-namespace:AUTOCAR.VistaModelo"
       xmlns:local="clr-namespace:AUTOCAR.Vistas"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="RegistroVehiculo">
+      Title="Registro Vehiculos">
+    <Window.DataContext>
+        <vm:VehiculoVM/>
+    </Window.DataContext>
 
-    <Grid>
-        
+    <Window.Resources>
+        <Style TargetType="Button" >
+            <Setter Property="Width" Value="135"/>
+            <Setter Property="Height" Value="30" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Width" Value="155" />
+                    <Setter Property="Height" Value="40" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Foreground" Value="Red" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="FontSize" Value="15" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="MenuItem" >
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Width" Value="155" />
+                    <Setter Property="Height" Value="26" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Foreground" Value="Orange" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="FontSize" Value="11" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+    </Window.Resources>
+    <Grid Background="Orange">
+        <Border Margin="10" BorderBrush="Black" BorderThickness="5,5,5,5" CornerRadius="8,8,8,8">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="2" >
+                    <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
+                        <TextBlock Text="Registro Vehiculos" FontSize="20" Foreground="Black" FontWeight="Bold" Width="173"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Button Click="Salir" Margin="200,1,0,0">Salir</Button>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">VehiculoID</Label>
+                        <TextBox Text="{Binding Vehiculo.VehiculoID}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Placa</Label>
+                        <TextBox Text="{Binding Vehiculo.Placa}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Ciudad</Label>
+                        <TextBox Text="{Binding Vehiculo.CiudadID}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Cilindraje</Label>
+                        <TextBox Text="{Binding Vehiculo.Cilindrada}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Caballo de fuerza</Label>
+                        <TextBox Text="{Binding Vehiculo.HP}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Proveedor</Label>
+                        <TextBox Text="{Binding Vehiculo.ProveedorID}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="7" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Tipo Vehiculo</Label>
+                        <TextBox Text="{Binding Vehiculo.Tipo_VehiculoID}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="8" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Estado Compra</Label>
+                        <TextBox Text="{Binding Vehiculo.Estado_CompraID}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Grid.Column="1">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Estado</Label>
+                        <TextBox Text="{Binding Vehiculo.EstadoID}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="1">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Marca</Label>
+                        <TextBox Text="{Binding Vehiculo.MarcaID}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="1">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Combustible</Label>
+                        <TextBox Text="{Binding Vehiculo.CombustibleID}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+             
+                <StackPanel Grid.Row="4" Grid.Column="1">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Precio Nuevo</Label>
+                        <TextBox Text="{Binding Vehiculo.Precio_Nuevo}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Grid.Column="1">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Precio Mercado</Label>
+                        <TextBox Text="{Binding Vehiculo.Precio_Mercado}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Grid.Column="1">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Precio Concesionario</Label>
+                        <TextBox Text="{Binding Vehiculo.Precio_Concesionario}" Width="392"></TextBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="7" Grid.Column="1">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Label Width="110">Foto</Label>
+                        <TextBox Text="{Binding Vehiculo.Foto}" x:Name="txtEditor" Width="130"  Margin="0,0,5,0"  />
+                        <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
+                            <Button  Name="btnOpenFile" Click="btnOpenFile_Click" Height="33">Cargar Foto</Button>
+                        </WrapPanel>
+                    </StackPanel>
+
+                </StackPanel>
+
+                <StackPanel Grid.Row="9" Grid.Column="0">
+                    <Button Command="{Binding cmd_Insertar}" >Insertar</Button>
+                </StackPanel>
+                
+                
+            </Grid>
+        </Border>
     </Grid>
 </Window>

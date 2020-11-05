@@ -7,9 +7,9 @@ namespace AUTOCAR.Modelos
     {
 
         [Key]
-        private int cobroId;
+        
         public int CobroID { get { return cobroId; } set { if (cobroId != value) { cobroId = value; OnPropertyChanged(); } } }
-
+        private int cobroId;
         [StringLength(30)]
         private DateTime fecha_cobro;
         public DateTime Fecha_Cobro { get { return fecha_cobro; } set { if (fecha_cobro != value) { fecha_cobro = value; OnPropertyChanged(); } } }

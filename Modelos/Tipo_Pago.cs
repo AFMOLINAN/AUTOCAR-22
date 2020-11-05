@@ -18,8 +18,8 @@ namespace AUTOCAR.Modelos
             return Metodo_PagoID + " " + Tipo_PagoID;
         }
         [Key]
-        private int tipo_pagoId;
         public int Tipo_PagoID { get { return tipo_pagoId; } set { if (tipo_pagoId != value) { tipo_pagoId = value; OnPropertyChanged(); } } }
+        private int tipo_pagoId;
 
         [StringLength(30)]
         private string metodo_pagoId;

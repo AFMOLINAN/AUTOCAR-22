@@ -16,8 +16,9 @@ namespace AUTOCAR.Modelos
         }
 
         [Key]
-        private int combustibleId;
+        
         public int CombustibleID { get { return combustibleId; } set { if (combustibleId != value) { combustibleId = value; OnPropertyChanged(); } } }
+        private int combustibleId;
 
         [StringLength(20)]
         private string tipo;

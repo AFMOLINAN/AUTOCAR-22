@@ -46,10 +46,10 @@ namespace AUTOCAR.Modelos
         private string direccion;
         public string Direccion { get { return direccion; } set { if (direccion != value) { direccion = value; OnPropertyChanged(); } } }
 
-        //[ForeignKey("oCiudades")]
+        //[ForeignKey("oCiudad")]
         public int CiudadID { get { return ciudadId; } set { if (ciudadId != value) { ciudadId = value; OnPropertyChanged(); } } }
         private int ciudadId;
-        public virtual Ciudad oCiudades { get; set; }
+        public virtual Ciudad oCiudad { get; set; }
 
 
         public virtual ObservableCollection<Cobro> oCobro { get { return ocobro; } set { ocobro = value; OnPropertyChanged(); } }

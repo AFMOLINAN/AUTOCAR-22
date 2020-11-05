@@ -9,6 +9,8 @@ namespace AUTOCAR.Modelos
         {
             oCliente = new ObservableCollection<Cliente>();
             oProveedor = new ObservableCollection<Proveedor>();
+            oVehiculo = new ObservableCollection<Vehiculo>();
+
         }
 
         public override string ToString()
@@ -17,8 +19,9 @@ namespace AUTOCAR.Modelos
         }
 
         [Key]
-        private int ciudadId;
+
         public int CiudadID { get { return ciudadId; } set { if (ciudadId != value) { ciudadId = value; OnPropertyChanged(); } } }
+        private int ciudadId;
 
         [StringLength(60)]
         private string n_municipio;
@@ -34,5 +37,9 @@ namespace AUTOCAR.Modelos
 
         public virtual ObservableCollection<Proveedor> oProveedor { get { return oproveedor; } set { oproveedor = value; OnPropertyChanged(); } }
         private ObservableCollection<Proveedor> oproveedor;
+
+        public virtual ObservableCollection<Vehiculo> oVehiculo { get { return ovehiculo; } set { ovehiculo = value; OnPropertyChanged(); } }
+        private ObservableCollection<Vehiculo> ovehiculo;
+
     }
 }

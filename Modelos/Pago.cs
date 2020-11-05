@@ -13,9 +13,10 @@ namespace AUTOCAR.Modelos
         }
 
         [Key]
-        private int pagoId;
-        public int PagoID { get { return pagoId; } set { if (pagoId != value) { pagoId = value; OnPropertyChanged(); } } }
         
+        public int PagoID { get { return pagoId; } set { if (pagoId != value) { pagoId = value; OnPropertyChanged(); } } }
+        private int pagoId;
+
         private DateTime fecha_pago;
         public DateTime Fecha_Pago { get { return fecha_pago; } set { if (fecha_pago != value) { fecha_pago = value; OnPropertyChanged(); } } }
 

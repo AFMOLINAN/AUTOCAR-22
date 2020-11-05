@@ -18,8 +18,9 @@ namespace AUTOCAR.Modelos
         }
 
         [Key]
-        private int estadoId;
+        
         public int EstadoID { get { return estadoId; } set { if (estadoId != value) { estadoId = value; OnPropertyChanged(); } } }
+        private int estadoId;
 
         [StringLength(20)]
         private string estado_vehiculo;

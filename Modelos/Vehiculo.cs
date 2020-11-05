@@ -1,5 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.InteropServices;
 
 namespace AUTOCAR.Modelos
 {
@@ -34,8 +35,8 @@ namespace AUTOCAR.Modelos
         public int Cilindrada { get { return cilindrada; } set { if (cilindrada != value) { cilindrada = value; OnPropertyChanged(); } } }
 
         [StringLength(10)]
-        private int cv;
-        public int CV { get { return cv; } set { if (cv != value) { cv = value; OnPropertyChanged(); } } }
+        private int hp;
+        public int HP { get { return hp; } set { if (hp != value) { hp = value; OnPropertyChanged(); } } }
 
         [StringLength(60)]
         private int precio_nuevo;
@@ -49,6 +50,9 @@ namespace AUTOCAR.Modelos
         private int precio_concesionario;
         public int Precio_Concesionario { get { return precio_concesionario; } set { if (precio_concesionario != value) { precio_concesionario = value; OnPropertyChanged(); } } }
 
+        [StringLength(100)]
+        private string foto;
+        public string Foto { get { return foto; } set { if (foto != value) { foto = value; OnPropertyChanged(); } } }
 
         //[ForeignKey("oCiudad")]
         public int CiudadID { get { return ciudadId; } set { if (ciudadId != value) { ciudadId = value; OnPropertyChanged(); } } }
@@ -84,6 +88,7 @@ namespace AUTOCAR.Modelos
         public int CombustibleID { get { return combustibleId; } set { if (combustibleId != value) { combustibleId = value; OnPropertyChanged(); } } }
         private int combustibleId;
         public virtual Combustible oCombustible { get; set; }
+
 
         public virtual ObservableCollection<Pago> oPago { get { return opago; } set { opago = value; OnPropertyChanged(); } }
         private ObservableCollection<Pago> opago;

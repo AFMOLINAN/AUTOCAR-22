@@ -18,8 +18,9 @@ namespace AUTOCAR.Modelos
         }
 
         [Key]
-        private int marcaId;
+        
         public int MarcaID { get { return marcaId; } set { if (marcaId != value) { marcaId = value; OnPropertyChanged(); } } }
+        private int marcaId;
 
         [StringLength(20)]
         private string n_marca;

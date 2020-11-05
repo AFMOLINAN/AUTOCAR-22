@@ -18,8 +18,9 @@ namespace AUTOCAR.Modelos
         }
 
         [Key]
-        private int proveedorId;
+        
         public int ProvedorID { get { return proveedorId; } set { if (proveedorId != value) { proveedorId = value; OnPropertyChanged(); } } }
+        private int proveedorId;
 
         [StringLength(30)]
         private string tipo_proveedor;
