@@ -15,15 +15,15 @@ namespace AUTOCAR.Modelos
 
         public override string ToString()
         {
-            return Metodo_PagoID + " " + Tipo_PagoID;
+            return Metodo_Pago + " " + Tipo_PagoID;
         }
         [Key]
         public int Tipo_PagoID { get { return tipo_pagoId; } set { if (tipo_pagoId != value) { tipo_pagoId = value; OnPropertyChanged(); } } }
         private int tipo_pagoId;
 
         [StringLength(30)]
-        private string metodo_pagoId;
-        public string Metodo_PagoID { get { return metodo_pagoId; } set { if (metodo_pagoId != value) { metodo_pagoId = value; OnPropertyChanged(); } } }
+        private string metodo_pago;
+        public string Metodo_Pago { get { return metodo_pago; } set { if (metodo_pago != value) { metodo_pago = value; OnPropertyChanged(); } } }
 
         public virtual ObservableCollection<Cobro> oCobro { get { return ocobro; } set { ocobro = value; OnPropertyChanged(); } }
         private ObservableCollection<Cobro> ocobro;

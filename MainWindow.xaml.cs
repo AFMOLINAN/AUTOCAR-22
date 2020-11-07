@@ -22,6 +22,13 @@ namespace AUTOCAR
 
         }
 
+        private void Tablas(object sender, RoutedEventArgs e)
+        {
+            Tablas RV = new Tablas();
+            RV.Show();
+
+        }
+
         private void Proveedor(object sender, RoutedEventArgs e)
         {
             RegistroProveedor RP = new RegistroProveedor();

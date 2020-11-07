@@ -18,7 +18,6 @@ namespace AUTOCAR.Modelos
         }
 
         [Key]
-        
         public int DepartamentoID { get { return departamentoId; } set { if (departamentoId != value) { departamentoId = value; OnPropertyChanged(); } } }
         private int departamentoId;
 

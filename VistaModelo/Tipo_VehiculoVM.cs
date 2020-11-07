@@ -1,16 +1,16 @@
-﻿using AUTOCAR.Modelos;
+﻿using AUTOCAR.Data;
+using AUTOCAR.Modelos;
 using System;
-using System.Collections.ObjectModel;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AUTOCAR.Data;
 using System.Windows;
 
 namespace AUTOCAR.VistaModelo
 {
-    class ProveedorVM : INotifyObject
+    class Tipo_VehiculoVM : INotifyObject
     {
         public RelayCommand cmd_Insertar { get; set; }
         public RelayCommand cmd_Consultar { get; set; }
@@ -19,35 +19,36 @@ namespace AUTOCAR.VistaModelo
 
         //public bool EsModifica { get; set; }
 
-        public Proveedor Proveedor { get { return proveedor; } set { proveedor = value; OnPropertyChanged(); } }
-        private Proveedor proveedor;
+        public Tipo_Vehiculo Tipo_Vehiculo { get { return tipo_vehiculo; } set { tipo_vehiculo = value; OnPropertyChanged(); } }
+        private Tipo_Vehiculo tipo_vehiculo;
 
-        public ObservableCollection<Proveedor> Lista { get { return lista; } set { lista = value; OnPropertyChanged(); } }
-        private ObservableCollection<Proveedor> lista = new ObservableCollection<Proveedor>();
+        public ObservableCollection<Tipo_Vehiculo> Lista { get { return lista; } set { lista = value; OnPropertyChanged(); } }
+        private ObservableCollection<Tipo_Vehiculo> lista = new ObservableCollection<Tipo_Vehiculo>();
 
-        public ProveedorVM()
+        public Tipo_VehiculoVM()
         {
             this.cmd_Insertar = new RelayCommand(p => this.Insertar());
             this.cmd_Consultar = new RelayCommand(p => this.Consultar());
             this.cmd_Borrar = new RelayCommand(p => this.Borrar());
             this.cmd_Modifica = new RelayCommand(p => this.Modifica());
-            this.Proveedor = new Proveedor();
+            this.Tipo_Vehiculo = new Tipo_Vehiculo();
         }
 
         public void Insertar()
         {
             using (var dbc = new ConexionDbContext())
             {
-                if (this.Proveedor.Nombre == null)
+                if (this.Tipo_Vehiculo.Tipo == null)
                 {
-                    MessageBox.Show("No digitó el nombre del proveedor a insertar");
+                    MessageBox.Show("No digitó el tipo de vehiculo");
                     return;
                 }
-                dbc.Proveedores.Add(this.Proveedor);
+                dbc.Tipo_Vehiculos.Add(this.Tipo_Vehiculo);
                 try
                 {
                     dbc.SaveChanges();
                     this.Consultar();
+                    
                 }
                 catch (Exception er)
                 {
@@ -62,15 +63,15 @@ namespace AUTOCAR.VistaModelo
         {
             using (var dbc = new ConexionDbContext())
             {
-                this.Lista = new ObservableCollection<Proveedor>(dbc.Proveedores);
+                this.Lista = new ObservableCollection<Tipo_Vehiculo>(dbc.Tipo_Vehiculos);
             }
         }
 
         public void Borrar()
         {
-            if (this.Proveedor.Nombre == null)
+            if (this.Tipo_Vehiculo.Tipo == null)
             {
-                MessageBox.Show("No digitó el proveedor a borrar");
+                MessageBox.Show("No digitó el tipo de vehiculo a borrar");
                 return;
             }
 
@@ -78,12 +79,12 @@ namespace AUTOCAR.VistaModelo
             {
                 try
                 {
-                    var borr = (from p in dbc.Proveedores
-                                where p.Nombre == this.Proveedor.Nombre
+                    var borr = (from p in dbc.Tipo_Vehiculos
+                                where p.Tipo == this.Tipo_Vehiculo.Tipo
                                 select p).Single();
-                    dbc.Proveedores.Remove(borr);
+                    dbc.Tipo_Vehiculos.Remove(borr);
                     dbc.SaveChanges();
-                    this.Lista = new ObservableCollection<Proveedor>(dbc.Proveedores);
+                    this.Lista = new ObservableCollection<Tipo_Vehiculo>(dbc.Tipo_Vehiculos);
                 }
                 catch (Exception er)
                 {
@@ -96,21 +97,17 @@ namespace AUTOCAR.VistaModelo
 
         public void Modifica()
         {
-            if (this.Proveedor.Nombre == null)
+            if (this.Tipo_Vehiculo.Tipo == null)
             {
-                MessageBox.Show("No digitó el nombre del proveedor a modificar");
+                MessageBox.Show("No digitó el tipo de vehiculo a modificar");
                 return;
             }
             using (var dbc = new ConexionDbContext())
             {
-                var proveedor = dbc.Proveedores.Find(this.Proveedor.ProveedorID);
+                var tipo_Vehiculo = dbc.Tipo_Vehiculos.Find(this.Tipo_Vehiculo.Tipo_VehiculoID);
                 //dbc.Razas.Attach(raza);
-                proveedor.Tipo_Proveedor = this.Proveedor.Tipo_Proveedor;
-                proveedor.N_Identificacion = this.Proveedor.N_Identificacion;
-                proveedor.Nombre = this.Proveedor.Nombre;
-                proveedor.Direccion = this.Proveedor.Direccion;
-                proveedor.Telefono = this.Proveedor.Telefono;
-                proveedor.CiudadID = this.Proveedor.CiudadID;
+                tipo_vehiculo.Tipo = this.Tipo_Vehiculo.Tipo;
+              
                 try
                 {
                     dbc.SaveChanges();

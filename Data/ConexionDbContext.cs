@@ -48,6 +48,7 @@ namespace AUTOCAR.Data
             modelBuilder.Entity<Tipo_Vehiculo>().Map(m => m.ToTable("Tipo_Vehiculo"));
             modelBuilder.Entity<Vehiculo>().Map(m => m.ToTable("Vehiculo"));
 
+
             /*
             // establecer una primary key.
             modelBuilder.Entity<Producto>().HasKey(c => c.Codigo);

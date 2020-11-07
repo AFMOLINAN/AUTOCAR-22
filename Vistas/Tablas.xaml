@@ -1,0 +1,111 @@
+﻿<Window x:Class="AUTOCAR.Vistas.Tablas"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AUTOCAR.Vistas"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Tablas">
+    <Window.Resources>
+        <Style TargetType="Button" >
+            <Setter Property="Width" Value="135"/>
+            <Setter Property="Height" Value="30" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Width" Value="155" />
+                    <Setter Property="Height" Value="40" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Foreground" Value="Red" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="FontSize" Value="15" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="MenuItem" >
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Height" Value="30" />
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Width" Value="155" />
+                    <Setter Property="Height" Value="26" />
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Foreground" Value="Orange" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                    <Setter Property="FontSize" Value="11" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+    </Window.Resources>
+    <Grid Background="Orange">
+        <Border Margin="10" BorderBrush="Black" BorderThickness="5,5,5,5" CornerRadius="8,8,8,8">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                
+
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="2" >
+                    <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
+                        <TextBlock Text="Registro Vehiculos" FontSize="20" Foreground="Black" FontWeight="Bold" Width="173"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <StackPanel  Orientation="Horizontal" >
+                        <Button  Margin="200,1,0,0">Salir</Button>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2" Grid.Column="0">
+                    <Button Click="Departamento" >Departamento</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="0">
+                    <Button Click="TipoVehiculo">Tipo Vehiculo</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="0">
+                    <Button  >Tipo Pago</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Grid.Column="0">
+                    <Button  >Marcas</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Grid.Column="1">
+                    <Button  >Estado de Compra</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="4" Grid.Column="1">
+                    <Button >Estado</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="3" Grid.Column="1">
+                    <Button >Combustible</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="2" Grid.Column="1">
+                    <Button  >Ciudad</Button>
+                </StackPanel>
+
+
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -14,12 +14,12 @@ namespace AUTOCAR.Modelos
 
         public override string ToString()
         {
-            return Tipo_Proveedor + " " + ProvedorID;
+            return Tipo_Proveedor + " " + ProveedorID;
         }
 
         [Key]
         
-        public int ProvedorID { get { return proveedorId; } set { if (proveedorId != value) { proveedorId = value; OnPropertyChanged(); } } }
+        public int ProveedorID { get { return proveedorId; } set { if (proveedorId != value) { proveedorId = value; OnPropertyChanged(); } } }
         private int proveedorId;
 
         [StringLength(30)]
