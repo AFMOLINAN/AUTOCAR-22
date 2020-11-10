@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:AUTOCAR.Vistas"
       mc:Ignorable="d" 
       d:DesignHeight="450"
-      Title="RegistroCliente" Width="400">
+      Title="RegistroCliente" Width="300">
 
 
     <Grid Background="Orange" Margin="0,0,-1,0">
@@ -22,70 +22,92 @@
                     <RowDefinition Height="31"/>
                     <RowDefinition Height="31"/>
                     <RowDefinition Height="31"/>
+                    <RowDefinition Height="31"/>
+                    <RowDefinition Height="31"/>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="50*" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,0" Grid.RowSpan="2" >
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
-                        <TextBlock Text="Registro de Cliente" FontSize="20" Foreground="Black" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="Registro de Cliente" FontSize="20" Foreground="Black" FontWeight="Bold" Width="180"/>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="1" >
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="70">Cedula:</Label>
                         <TextBox Text="{Binding Cliente.ClienteID}" Width="182"></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="2" >
+                <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label Width="70">Nombres:</Label>
-                        <TextBox Text="{Binding Raza.Detalle}" Width="183"></TextBox>
+                        <TextBox Text="{Binding Cliente.Nombre}" Width="183"></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="3" >
+                <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label Width="70">Apellidos:</Label>
-                        <TextBox Text="{Binding Raza.Detalle}" Width="183"></TextBox>
+                        <TextBox Text="{Binding Cliente.Apellido}" Width="183"></TextBox>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="4">
-                    <Label Margin="1,0,305,0">Ciudad:</Label>
+                    <Label Margin="1,0,305,0">Sexo:</Label>
                 </StackPanel>
-                <StackPanel Grid.Row="4">
-                    <ComboBox x:Name = "comboSexo"  Margin = "70,0,110,0" Height="27">
-                        <ComboBoxItem Content = "Selecciones el item" IsSelected="True" Height="20" />
-                        <ComboBoxItem Content = "Razas" Selected="Razas" />
-                        <ComboBoxItem  Content = "Colores" Selected="Colores" />
-                        <ComboBoxItem Content = "Animales" Selected="Animales" />
-                    </ComboBox>
+                <StackPanel Grid.Row="4" Grid.ColumnSpan="2">
+                    <StackPanel Orientation="Horizontal"  >
+                        <Label Width="70">Sexo:</Label>
+                        <TextBox Text="{Binding Cliente.Sexo}" Width="183"></TextBox>
+                    </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="5" >
+                <StackPanel Grid.Row="5" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label Width="70">Celular:</Label>
-                        <TextBox Text="{Binding Raza.Detalle}" Width="183"></TextBox>
+                        <TextBox Text="{Binding Cliente.Celular}" Width="183"></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="6" >
+                <StackPanel Grid.Row="6" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label Width="70">Email:</Label>
-                        <TextBox Text="{Binding Raza.Detalle}" Width="183"></TextBox>
+                        <TextBox Text="{Binding Cliente.Email}" Width="183"></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="7" >
+                <StackPanel Grid.Row="7" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label Width="70">Direccion:</Label>
-                        <TextBox Text="{Binding Raza.Detalle}" Width="183"></TextBox>
+                        <TextBox Text="{Binding Cliente.Direccion}" Width="183"></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="8">
-                    <Label Margin="1,0,305,0">Ciudad:</Label>
+                <StackPanel Grid.Row="8" Grid.ColumnSpan="2">
+                    <Label Margin="1
+                           ">Ciudad:</Label>
                 </StackPanel>
-                <StackPanel Grid.Row="8">
-                    <ComboBox x:Name = "comboCiudad"  Margin = "70,0,120,70" Height="26">
-                        <ComboBoxItem Content = "Selecciones el item" IsSelected="True" Height="20" />
-                        <ComboBoxItem Content = "Razas" Selected="Razas" />
-                        <ComboBoxItem  Content = "Colores" Selected="Colores" />
-                        <ComboBoxItem Content = "Animales" Selected="Animales" />
+                <StackPanel Grid.Row="8" Grid.ColumnSpan="2">
+                    <ComboBox ItemsSource="{Binding  ListaC, Mode=OneWay}" SelectedValue="{Binding Ciudad.CiudadID}"
+                              SelectedValuePath="CuidadID"  Margin = "70,0,10,70" Height="26">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding N_Municipio}" Width="300" Foreground="Tomato" />
+                                    <TextBlock Text="{Binding CiudadID}" Width="50"  Foreground="Tomato" ></TextBlock>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
                     </ComboBox>
+                </StackPanel>
+                <StackPanel Grid.Row="10" Grid.Column="0">
+                    <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0" >Insertar</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="10" Grid.Column="2">
+                    <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0" >Cerrar</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="11" Grid.Column="0">
+                    <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0" >Eliminar</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="11" Grid.Column="2">
+                    <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0" >Insertar</Button>
                 </StackPanel>
             </Grid>
         </Border>

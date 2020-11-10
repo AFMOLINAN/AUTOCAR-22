@@ -41,5 +41,18 @@ namespace AUTOCAR
         {
             this.Close();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Cliente(object sender, RoutedEventArgs e)
+        {
+
+            RegistroCliente RV = new RegistroCliente();
+            RV.Show();
+
+        }
     }
 }
