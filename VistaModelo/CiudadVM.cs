@@ -1,11 +1,8 @@
 ﻿using AUTOCAR.Data;
 using AUTOCAR.Modelos;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace AUTOCAR.VistaModelo
@@ -22,7 +19,6 @@ namespace AUTOCAR.VistaModelo
         public Ciudad Ciudad { get { return ciudad; } set { ciudad = value; OnPropertyChanged(); } }
         private Ciudad ciudad;
 
-
         public ObservableCollection<Ciudad> Lista { get { return lista; } set { lista = value; OnPropertyChanged(); } }
         private ObservableCollection<Ciudad> lista = new ObservableCollection<Ciudad>();
 
@@ -35,18 +31,14 @@ namespace AUTOCAR.VistaModelo
                 this.cmd_Consultar = new RelayCommand(p => this.Consultar());
                 this.cmd_Borrar = new RelayCommand(p => this.Borrar());
                 this.cmd_Modifica = new RelayCommand(p => this.Modifica());
-                this.Ciudad = new Ciudad(); 
-            
+                this.Ciudad = new Ciudad();
             using (var dbc = new ConexionDbContext())
             {
-
                 this.ListaD = new ObservableCollection<Departamento>(dbc.Departamentos);
-
             }
-
         }
 
-            public void Insertar()
+        public void Insertar()
             {
                 using (var dbc = new ConexionDbContext())
                 {

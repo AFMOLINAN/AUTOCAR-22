@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AUTOCAR.VistaModelo
 {
-    class Cliente
+    class ClienteVM
     {
     }
 }
