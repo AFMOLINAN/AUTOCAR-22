@@ -4,11 +4,10 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:vm="clr-namespace:AUTOCAR.VistaModelo"
-      xmlns:sys="clr-namespace:System;assembly=mscorlib"
-      xmlns:local="clr-namespace:AUTOCAR.Vistas"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Registro Vehiculos">
+    
     <Window.DataContext>
         <vm:VehiculoVM/>
     </Window.DataContext>

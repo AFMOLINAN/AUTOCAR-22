@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AUTOCAR.Vistas"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="300" d:DesignWidth="800"
       Title="Tablas">
     <Window.Resources>
         <Style TargetType="Button" >
@@ -46,18 +46,15 @@
         <Border Margin="10" BorderBrush="Black" BorderThickness="5,5,5,5" CornerRadius="8,8,8,8">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="31*" />
-                    <RowDefinition Height="31*" />
-                    <RowDefinition Height="31*" />
-                    <RowDefinition Height="31*" />
-                    <RowDefinition Height="31*" />
-                    <RowDefinition Height="31*" />
-                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="35*" />
+                    <RowDefinition Height="26*" />
+                    <RowDefinition Height="26*" />
+                    <RowDefinition Height="26*" />
+                    <RowDefinition Height="26*" />
+                    <RowDefinition Height="26*" />
+                    <RowDefinition Height="26*" />
 
-                    <RowDefinition Height="31*" />
-                    <RowDefinition Height="31*" />
-                    <RowDefinition Height="31*" />
-                    <RowDefinition Height="31*" />
+                    
                 
 
                 </Grid.RowDefinitions>
@@ -75,7 +72,7 @@
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="1">
                     <StackPanel  Orientation="Horizontal" >
-                        <Button  Margin="200,1,0,0">Salir</Button>
+                        <Button Click="Salir" Margin="200,1,0,0">Salir</Button>
                     </StackPanel>
                 </StackPanel>
 
@@ -101,7 +98,7 @@
                     <Button >Combustible</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="1">
-                    <Button  >Ciudad</Button>
+                    <Button Click="Ciudad" >Ciudad</Button>
                 </StackPanel>
 
 

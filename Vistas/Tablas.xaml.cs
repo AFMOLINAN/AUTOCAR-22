@@ -38,6 +38,12 @@ namespace AUTOCAR.Vistas
             RP.Show();
 
         }
+        private void Ciudad(object sender, RoutedEventArgs e)
+        {
+            Ciudad RP = new Ciudad();
+            RP.Show();
+
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -47,6 +53,10 @@ namespace AUTOCAR.Vistas
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
+        }
+        private void Salir(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }
