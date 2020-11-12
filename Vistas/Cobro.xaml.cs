@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace AUTOCAR.Vistas
 {
     /// <summary>
-    /// Lógica de interacción para RegistroCliente.xaml
+    /// Lógica de interacción para Cobro.xaml
     /// </summary>
-    public partial class RegistroCliente : Window
+    public partial class Cobro : Page
     {
-        public RegistroCliente()
+        public Cobro()
         {
             InitializeComponent();
         }

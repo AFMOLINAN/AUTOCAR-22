@@ -4,10 +4,14 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:AUTOCAR.Vistas"
+      xmlns:vm="clr-namespace:AUTOCAR.VistaModelo"  
       mc:Ignorable="d" 
       d:DesignHeight="450"
       Title="RegistroCliente" Width="300">
 
+    <Window.DataContext>
+        <vm:ClienteVM/>
+    </Window.DataContext>
 
     <Grid Background="Orange" Margin="0,0,-1,0">
         <Border Margin="10" BorderBrush="Black" BorderThickness="5" CornerRadius="8">
@@ -38,19 +42,19 @@
                 <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="70">Cedula:</Label>
-                        <TextBox Text="{Binding Cliente.ClienteID}" Width="182"></TextBox>
+                        <TextBox Text="{Binding Cliente.ClienteID}" Width="182" Margin="0,0,10,0"></TextBox>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label Width="70">Nombres:</Label>
-                        <TextBox Text="{Binding Cliente.Nombre}" Width="183"></TextBox>
+                        <TextBox Text="{Binding Cliente.Nombre}" Width="182" Margin="0,0,10,0"></TextBox>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="3" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label Width="70">Apellidos:</Label>
-                        <TextBox Text="{Binding Cliente.Apellido}" Width="183"></TextBox>
+                        <TextBox Text="{Binding Cliente.Apellido}" Width="182" Margin="0,0,10,0"></TextBox>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="4">
@@ -59,25 +63,25 @@
                 <StackPanel Grid.Row="4" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label Width="70">Sexo:</Label>
-                        <TextBox Text="{Binding Cliente.Sexo}" Width="183"></TextBox>
+                        <TextBox Text="{Binding Cliente.Sexo}" Width="182" Margin="0,0,10,0"></TextBox>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="5" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label Width="70">Celular:</Label>
-                        <TextBox Text="{Binding Cliente.Celular}" Width="183"></TextBox>
+                        <TextBox Text="{Binding Cliente.Celular}" Width="182" Margin="0,0,10,0"></TextBox>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="6" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label Width="70">Email:</Label>
-                        <TextBox Text="{Binding Cliente.Email}" Width="183"></TextBox>
+                        <TextBox Text="{Binding Cliente.Email}" Width="182" Margin="0,0,10,0"></TextBox>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="7" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
                         <Label Width="70">Direccion:</Label>
-                        <TextBox Text="{Binding Cliente.Direccion}" Width="183"></TextBox>
+                        <TextBox Text="{Binding Cliente.Direccion}" Width="182" Margin="0,0,10,0"></TextBox>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="8" Grid.ColumnSpan="2">
@@ -98,10 +102,10 @@
                     </ComboBox>
                 </StackPanel>
                 <StackPanel Grid.Row="10" Grid.Column="0">
-                    <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0" >Insertar</Button>
+                    <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0" Click="Guardar" >Guardar</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="10" Grid.Column="2">
-                    <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0" >Cerrar</Button>
+                    <Button Click="Salir" Margin="10,0,10,0">Salir</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="11" Grid.Column="0">
                     <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0" >Eliminar</Button>

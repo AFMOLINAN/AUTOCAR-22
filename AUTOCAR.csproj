@@ -153,6 +153,7 @@
     <Compile Include="RelayCommand.cs" />
     <Compile Include="VistaModelo\CiudadVM.cs" />
     <Compile Include="VistaModelo\ClienteVM.cs" />
+    <Compile Include="VistaModelo\CobroVM.cs" />
     <Compile Include="VistaModelo\DepartamentoVM.cs" />
     <Compile Include="VistaModelo\ProveedorVM.cs" />
     <Compile Include="VistaModelo\Tipo_VehiculoVM.cs" />
@@ -160,11 +161,11 @@
     <Compile Include="Vistas\Ciudad.xaml.cs">
       <DependentUpon>Ciudad.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\Cobro.xaml.cs">
+      <DependentUpon>Cobro.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Departamento.xaml.cs">
       <DependentUpon>Departamento.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Vistas\RegistroCliente.xaml.cs">
-      <DependentUpon>RegistroCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\RegistroProveedor.xaml.cs">
       <DependentUpon>RegistroProveedor.xaml</DependentUpon>
@@ -196,6 +197,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Vistas\Ciudad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\Cobro.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
