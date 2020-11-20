@@ -41,7 +41,7 @@
 
 
     </Window.Resources>
-    <Grid Background="Orange">
+    <Grid>
         <Border Margin="10" BorderBrush="Black" BorderThickness="5,5,5,5" CornerRadius="8,8,8,8">
             <Grid>
                 <Grid.RowDefinitions>
@@ -55,9 +55,16 @@
                     <ColumnDefinition Width="30*" />
                     <ColumnDefinition Width="15*" />
                 </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="4" Margin="-14,-17,-15,-16" Grid.RowSpan="3">
+                    <StackPanel.Background>
+                        <ImageBrush ImageSource="Imagenes\Principal.jpeg" />
+                    </StackPanel.Background>
+                </StackPanel>
+
                 <StackPanel Grid.Row="0" Grid.Column="0">
                     <StackPanel Orientation="Horizontal"  >
-                        <Label FontSize="30"  FontFamily="Arial" Margin="50,20,0,0" HorizontalContentAlignment="Center" Content="Clientes" Width="126" />
+                        <Label FontSize="30"  FontFamily="Arial" Margin="50,20,0,0" HorizontalContentAlignment="Center" Content="Clientes" Width="126" Foreground="White" />
                     </StackPanel>
                 </StackPanel>
 
@@ -70,7 +77,7 @@
 
                 <StackPanel Grid.Row="0" Grid.Column="1">
                     <StackPanel Orientation="Horizontal"  >
-                        <Label FontSize="30"  FontFamily="Arial" Margin="20,20,0,0" HorizontalContentAlignment="Center" Content="Proveedores" Width="197" />
+                        <Label FontSize="30"  FontFamily="Arial" Margin="20,20,0,0" HorizontalContentAlignment="Center" Content="Proveedores" Width="197" Foreground="White" />
                     </StackPanel>
                 </StackPanel>
 
@@ -80,17 +87,17 @@
                     <Button Content="Info Compras" Height="30" Margin="0,10"  />
 
                 </StackPanel>
-                
+
                 <StackPanel Grid.Row="0" Grid.Column="2">
                     <StackPanel Orientation="Horizontal"  >
-                        <Label FontSize="30"  FontFamily="Arial" Margin="35,20,0,0"  Content="Vehiculos" Width="143" />
+                        <Label FontSize="30"  FontFamily="Arial" Margin="35,20,0,0"  Content="Vehiculos" Width="143" Foreground="White" />
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel Grid.Row="1" Grid.Column="2" Margin="27,42,23,30" Name="stackPanel3" >
                     <Button  Content="Ficha Vehiculo"  Height="30" Margin="0,0,0,10" Click="Vehiculo"  />
                     <Button Content="Inventarios" Height="30" Margin="0,10" />
-                    
+
                 </StackPanel>
 
                 <StackPanel Grid.Row="0" Grid.Column="3">
@@ -98,12 +105,6 @@
                 </StackPanel>
                 <StackPanel Grid.Row="1" Grid.Column="3">
                     <Button  Content="Tablas"  Height="30" Margin="0,42,10,30" Width="Auto" Click="Tablas" />
-                </StackPanel>
-
-                <StackPanel Grid.Row="2" Grid.ColumnSpan="4" Margin="10">
-                    <StackPanel.Background>
-                        <ImageBrush ImageSource="Imagenes\Logo.jpg" />
-                    </StackPanel.Background>
                 </StackPanel>
             </Grid>
         </Border>
