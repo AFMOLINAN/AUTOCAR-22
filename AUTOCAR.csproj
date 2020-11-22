@@ -47,9 +47,6 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.9.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.9\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
     </Reference>
@@ -154,18 +151,32 @@
     <Compile Include="VistaModelo\CiudadVM.cs" />
     <Compile Include="VistaModelo\ClienteVM.cs" />
     <Compile Include="VistaModelo\CobroVM.cs" />
+    <Compile Include="VistaModelo\CombustibleVM.cs" />
     <Compile Include="VistaModelo\DepartamentoVM.cs" />
+    <Compile Include="VistaModelo\EstadoVM.cs" />
+    <Compile Include="VistaModelo\Estado_CompraVM.cs" />
+    <Compile Include="VistaModelo\MarcaVM.cs" />
     <Compile Include="VistaModelo\ProveedorVM.cs" />
+    <Compile Include="VistaModelo\Tipo_PagoVM.cs" />
     <Compile Include="VistaModelo\Tipo_VehiculoVM.cs" />
     <Compile Include="VistaModelo\VehiculoVM.cs" />
     <Compile Include="Vistas\Ciudad.xaml.cs">
       <DependentUpon>Ciudad.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vistas\Cobro.xaml.cs">
-      <DependentUpon>Cobro.xaml</DependentUpon>
+    <Compile Include="Vistas\Combustible.xaml.cs">
+      <DependentUpon>Combustible.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\Departamento.xaml.cs">
       <DependentUpon>Departamento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Estado.xaml.cs">
+      <DependentUpon>Estado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Estado_Compra.xaml.cs">
+      <DependentUpon>Estado_Compra.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Marcas.xaml.cs">
+      <DependentUpon>Marcas.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\RegistroProveedor.xaml.cs">
       <DependentUpon>RegistroProveedor.xaml</DependentUpon>
@@ -197,16 +208,28 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Vistas\Ciudad.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
-    <Page Include="Vistas\Cobro.xaml">
-      <SubType>Designer</SubType>
+    <Page Include="Vistas\Combustible.xaml">
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Vistas\Departamento.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vistas\Estado.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vistas\Estado_Compra.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vistas\Marcas.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Vistas\RegistroCliente.xaml">
       <SubType>Designer</SubType>
@@ -221,16 +244,16 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Vistas\Tablas.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Vistas\Tipo_Pago.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Vistas\Tipo_Vehiculo.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>

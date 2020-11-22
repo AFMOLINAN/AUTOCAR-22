@@ -1,59 +1,51 @@
-﻿using System;
+﻿using AUTOCAR.Data;
+using AUTOCAR.Modelos;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
-using AUTOCAR.Data;
-using AUTOCAR.Modelos;
 
 namespace AUTOCAR.VistaModelo
 {
-    class CiudadVM : INotifyObject
+    class Tipo_PagoVM : INotifyObject
     {
         public RelayCommand cmd_Insertar { get; set; }
         public RelayCommand cmd_Consultar { get; set; }
         public RelayCommand cmd_Borrar { get; set; }
         public RelayCommand cmd_Modifica { get; set; }
 
-        public Ciudad Ciudad { get { return ciudad; } set { ciudad = value; OnPropertyChanged(); } }
-        private Ciudad ciudad;
+        //public bool EsModifica { get; set; }
 
-        public ObservableCollection<Ciudad> Lista { get { return lista; } set { lista = value; OnPropertyChanged(); } }
-        private ObservableCollection<Ciudad> lista = new ObservableCollection<Ciudad>();
+        public Tipo_Pago Tipo_Pago { get { return tipo_pago; } set { tipo_pago = value; OnPropertyChanged(); } }
+        private Tipo_Pago tipo_pago;
 
-        public ObservableCollection<Departamento> ListaD { get { return listaD; } set { listaD = value; OnPropertyChanged(); } }
-        private ObservableCollection<Departamento> listaD = new ObservableCollection<Departamento>();
+        public ObservableCollection<Tipo_Pago> Lista { get { return lista; } set { lista = value; OnPropertyChanged(); } }
+        private ObservableCollection<Tipo_Pago> lista = new ObservableCollection<Tipo_Pago>();
 
-        public CiudadVM()
+        public Tipo_PagoVM()
         {
             this.cmd_Insertar = new RelayCommand(p => this.Insertar());
             this.cmd_Consultar = new RelayCommand(p => this.Consultar());
             this.cmd_Borrar = new RelayCommand(p => this.Borrar());
             this.cmd_Modifica = new RelayCommand(p => this.Modifica());
-            this.Ciudad = new Ciudad();
-
-            using (var dbc = new ConexionDbContext())
-            {
-                this.Lista = new ObservableCollection<Ciudad>(dbc.Ciudades);
-                this.ListaD = new ObservableCollection<Departamento>(dbc.Departamentos);
-               
-            }
-            
+            this.Tipo_Pago = new Tipo_Pago();
         }
 
         public void Insertar()
         {
             using (var dbc = new ConexionDbContext())
             {
-                if (this.Ciudad.N_Municipio == null)
+                if (this.Tipo_Pago.Metodo_Pago == null)
                 {
-                    MessageBox.Show("No digitó la ciudad a insertar");
+                    MessageBox.Show("No digitó el nombre del metodo de pago");
                     return;
                 }
-                dbc.Ciudades.Add(this.Ciudad);
+                dbc.Tipo_Pagos.Add(this.Tipo_Pago);
                 try
                 {
                     dbc.SaveChanges();
                     this.Consultar();
+
                 }
                 catch (Exception er)
                 {
@@ -68,18 +60,16 @@ namespace AUTOCAR.VistaModelo
         {
             using (var dbc = new ConexionDbContext())
             {
-                this.Lista = new ObservableCollection<Ciudad>(dbc.Ciudades);
-                this.ListaD = new ObservableCollection<Departamento>(dbc.Departamentos);
-                
+                this.Lista = new ObservableCollection<Tipo_Pago>(dbc.Tipo_Pagos);
+
             }
         }
 
-
         public void Borrar()
         {
-            if (this.Ciudad.N_Municipio == null)
+            if (this.Tipo_Pago.Metodo_Pago == null)
             {
-                MessageBox.Show("No digitó la ciudad a eliminar");
+                MessageBox.Show("No digitó el nombre del metodo de pago a borrar");
                 return;
             }
 
@@ -87,12 +77,12 @@ namespace AUTOCAR.VistaModelo
             {
                 try
                 {
-                    var borr = (from p in dbc.Ciudades
-                                where p.N_Municipio == this.Ciudad.N_Municipio
+                    var borr = (from p in dbc.Tipo_Pagos
+                                where p.Metodo_Pago == this.Tipo_Pago.Metodo_Pago
                                 select p).Single();
-                    dbc.Ciudades.Remove(borr);
+                    dbc.Tipo_Pagos.Remove(borr);
                     dbc.SaveChanges();
-                    this.Lista = new ObservableCollection<Ciudad>(dbc.Ciudades);
+                    this.Lista = new ObservableCollection<Tipo_Pago>(dbc.Tipo_Pagos);
                 }
                 catch (Exception er)
                 {
@@ -105,16 +95,16 @@ namespace AUTOCAR.VistaModelo
 
         public void Modifica()
         {
-            if (this.Ciudad.N_Municipio == null)
+            if (this.Tipo_Pago.Metodo_Pago == null)
             {
-                MessageBox.Show("No digitó la ciudad actualizar");
+                MessageBox.Show("No digitó el nombre del metodo de pago a modificar");
                 return;
             }
             using (var dbc = new ConexionDbContext())
             {
-                var ciudad = dbc.Ciudades.Find(this.Ciudad.CiudadID);
-                ciudad.CiudadID = this.Ciudad.CiudadID;
-                ciudad.N_Municipio = this.Ciudad.N_Municipio;
+                var Departamento = dbc.Departamentos.Find(this.Tipo_Pago.Tipo_PagoID);
+                tipo_pago.Metodo_Pago = this.Tipo_Pago.Metodo_Pago;
+
                 try
                 {
                     dbc.SaveChanges();

@@ -3,10 +3,13 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AUTOCAR.Vistas"
+      
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="800"
+      d:DesignHeight="290.741" d:DesignWidth="762.037"
       Title="Tablas">
+
+
+
     <Window.Resources>
         <Style TargetType="Button" >
             <Setter Property="Width" Value="135"/>
@@ -54,8 +57,8 @@
                     <RowDefinition Height="26*" />
                     <RowDefinition Height="26*" />
 
-                    
-                
+
+
 
                 </Grid.RowDefinitions>
 
@@ -83,19 +86,19 @@
                     <Button Click="TipoVehiculo">Tipo Vehiculo</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="4" Grid.Column="0">
-                    <Button  >Tipo Pago</Button>
+                    <Button  Click="TipoPago">Tipo Pago</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="5" Grid.Column="0">
-                    <Button  >Marcas</Button>
+                    <Button Click="Marca" >Marcas</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="5" Grid.Column="1">
-                    <Button  >Estado de Compra</Button>
+                    <Button Click="Estado_Compra" >Estado de Compra</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="4" Grid.Column="1">
-                    <Button >Estado</Button>
+                    <Button Click="Estado">Estado</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="3" Grid.Column="1">
-                    <Button >Combustible</Button>
+                    <Button Click="Combustible">Combustible</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="2" Grid.Column="1">
                     <Button Click="Ciudad" >Ciudad</Button>

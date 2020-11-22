@@ -5,8 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:vm="clr-namespace:AUTOCAR.VistaModelo"
       mc:Ignorable="d" 
-      d:DesignHeight="311" d:DesignWidth="373"
-      Title="Departamento">
+      Title="Departamento" Height="320.255" Width="780.292">
 
     <Window.DataContext>
         <vm:DepartamentoVM/>
@@ -23,7 +22,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" >
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
-                        <TextBlock Text="Registro Tipo Vehiculo" FontSize="20" Foreground="Black" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="Registro Departamento" FontSize="20" Foreground="Black" FontWeight="Bold"></TextBlock>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="1" >

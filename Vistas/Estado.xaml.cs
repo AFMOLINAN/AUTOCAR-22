@@ -10,19 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace AUTOCAR.Vistas
 {
     /// <summary>
-    /// Lógica de interacción para Cobro.xaml
+    /// Lógica de interacción para Estado.xaml
     /// </summary>
-    public partial class Cobro : Page
+    public partial class Estado : Window
     {
-        public Cobro()
+        public Estado()
         {
             InitializeComponent();
+        }
+
+        private void Salir(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

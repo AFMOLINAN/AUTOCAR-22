@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace AUTOCAR.Vistas
 {
@@ -45,15 +32,41 @@ namespace AUTOCAR.Vistas
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void TipoPago(object sender, RoutedEventArgs e)
         {
+            Tipo_Pago RP = new Tipo_Pago();
+            RP.Show();
 
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Marca(object sender, RoutedEventArgs e)
         {
+            Marcas RP = new Marcas();
+            RP.Show();
 
         }
+        private void Estado_Compra(object sender, RoutedEventArgs e)
+        {
+            Estado_Compra RP = new Estado_Compra();
+            RP.Show();
+
+        }
+
+        private void Estado(object sender, RoutedEventArgs e)
+        {
+            Estado RP = new Estado();
+            RP.Show();
+
+        }
+
+        private void Combustible(object sender, RoutedEventArgs e)
+        {
+            Combustible RP = new Combustible();
+            RP.Show();
+
+        }
+
+    
         private void Salir(object sender, RoutedEventArgs e)
         {
             this.Close();

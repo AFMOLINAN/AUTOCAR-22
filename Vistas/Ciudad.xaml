@@ -1,15 +1,14 @@
 ﻿<Window x:Class="AUTOCAR.Vistas.Ciudad"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:AUTOCAR.Vistas"
-      xmlns:vm="clr-namespace:AUTOCAR.VistaModelo"
-      mc:Ignorable="d"
-      Title="Ciudad" Height="320.255" Width="780.292">
-    
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:AUTOCAR.VistaModelo"
+        mc:Ignorable="d"
+        Title="Ciudad" Height="320.255" Width="780.292">
+
     <Window.DataContext>
-        <vm:CiudadVM/>
+        <vm:CiudadVM />
     </Window.DataContext>
 
     <Grid Background="Orange">
@@ -23,7 +22,7 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" >
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
-                        <TextBlock Text="Registro Tipo Vehiculo" FontSize="20" Foreground="Black" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="Registro Ciudad" FontSize="20" Foreground="Black" FontWeight="Bold"></TextBlock>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="1" >
@@ -32,10 +31,11 @@
                         <TextBox Text="{Binding Ciudad.N_Municipio}" Width="186"></TextBox>
                     </StackPanel>
                 </StackPanel>
+
                 <StackPanel Grid.Row="2" >
-                    <StackPanel  Orientation="Horizontal" Margin="0,0,416,0" >
+                    <StackPanel  Orientation="Horizontal" >
                         <Label Width="140">Departamento:</Label>
-                        <ComboBox ItemsSource="{Binding  ListaD, Mode=OneWay}" SelectedValue="{Binding Departamento.DepartamentoID}"  SelectedValuePath="DepartamentoID" Width="186">
+                        <ComboBox ItemsSource="{Binding  ListaD, Mode=OneWay}" SelectedValue="{Binding Departamento.DepartamentoID}"  SelectedValuePath="DepartamentoID" Width="189">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -45,8 +45,10 @@
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
+                        <!--<TextBox Text="{Binding Departamento.DepartamentoID}" Width="183"></TextBox>   -->
                     </StackPanel>
                 </StackPanel>
+
                 <StackPanel Grid.Row="3">
                     <Grid>
                         <Grid.RowDefinitions>
@@ -85,6 +87,7 @@
                                             <StackPanel Orientation="Horizontal">
                                                 <TextBlock Text="{Binding N_Municipio}" Width="200" Foreground="Blue" />
                                                 <TextBlock Text="{Binding CiudadID}" Foreground="Blue"/>
+            
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>

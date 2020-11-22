@@ -1,11 +1,8 @@
 ﻿using AUTOCAR.Data;
 using AUTOCAR.Modelos;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace AUTOCAR.VistaModelo
@@ -72,7 +69,7 @@ namespace AUTOCAR.VistaModelo
         {
             if (this.Departamento.N_Departamento == null)
             {
-                MessageBox.Show("No digitó el nombre del departamento a borrar");
+                MessageBox.Show("No digitó el departamento a borrar");
                 return;
             }
 

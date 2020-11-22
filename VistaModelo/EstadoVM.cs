@@ -1,59 +1,50 @@
-﻿using System;
+﻿using AUTOCAR.Data;
+using AUTOCAR.Modelos;
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
-using AUTOCAR.Data;
-using AUTOCAR.Modelos;
-
 namespace AUTOCAR.VistaModelo
 {
-    class CiudadVM : INotifyObject
+    class EstadoVM : INotifyObject
     {
         public RelayCommand cmd_Insertar { get; set; }
         public RelayCommand cmd_Consultar { get; set; }
         public RelayCommand cmd_Borrar { get; set; }
         public RelayCommand cmd_Modifica { get; set; }
 
-        public Ciudad Ciudad { get { return ciudad; } set { ciudad = value; OnPropertyChanged(); } }
-        private Ciudad ciudad;
+        //public bool EsModifica { get; set; }
 
-        public ObservableCollection<Ciudad> Lista { get { return lista; } set { lista = value; OnPropertyChanged(); } }
-        private ObservableCollection<Ciudad> lista = new ObservableCollection<Ciudad>();
+        public Estado Estado { get { return estado; } set { estado = value; OnPropertyChanged(); } }
+        private Estado estado;
 
-        public ObservableCollection<Departamento> ListaD { get { return listaD; } set { listaD = value; OnPropertyChanged(); } }
-        private ObservableCollection<Departamento> listaD = new ObservableCollection<Departamento>();
+        public ObservableCollection<Estado> Lista { get { return lista; } set { lista = value; OnPropertyChanged(); } }
+        private ObservableCollection<Estado> lista = new ObservableCollection<Estado>();
 
-        public CiudadVM()
+        public EstadoVM()
         {
             this.cmd_Insertar = new RelayCommand(p => this.Insertar());
             this.cmd_Consultar = new RelayCommand(p => this.Consultar());
             this.cmd_Borrar = new RelayCommand(p => this.Borrar());
             this.cmd_Modifica = new RelayCommand(p => this.Modifica());
-            this.Ciudad = new Ciudad();
-
-            using (var dbc = new ConexionDbContext())
-            {
-                this.Lista = new ObservableCollection<Ciudad>(dbc.Ciudades);
-                this.ListaD = new ObservableCollection<Departamento>(dbc.Departamentos);
-               
-            }
-            
+            this.Estado = new Estado();
         }
 
         public void Insertar()
         {
             using (var dbc = new ConexionDbContext())
             {
-                if (this.Ciudad.N_Municipio == null)
+                if (this.Estado.Estado_Vehiculo == null)
                 {
-                    MessageBox.Show("No digitó la ciudad a insertar");
+                    MessageBox.Show("No digitó el estado del vehiculo a insertar");
                     return;
                 }
-                dbc.Ciudades.Add(this.Ciudad);
+                dbc.Estados.Add(this.Estado);
                 try
                 {
                     dbc.SaveChanges();
                     this.Consultar();
+
                 }
                 catch (Exception er)
                 {
@@ -68,18 +59,16 @@ namespace AUTOCAR.VistaModelo
         {
             using (var dbc = new ConexionDbContext())
             {
-                this.Lista = new ObservableCollection<Ciudad>(dbc.Ciudades);
-                this.ListaD = new ObservableCollection<Departamento>(dbc.Departamentos);
-                
+                this.Lista = new ObservableCollection<Estado>(dbc.Estados);
+
             }
         }
 
-
         public void Borrar()
         {
-            if (this.Ciudad.N_Municipio == null)
+            if (this.Estado.Estado_Vehiculo == null)
             {
-                MessageBox.Show("No digitó la ciudad a eliminar");
+                MessageBox.Show("No digitó el estado del vehiculo a borrar");
                 return;
             }
 
@@ -87,12 +76,12 @@ namespace AUTOCAR.VistaModelo
             {
                 try
                 {
-                    var borr = (from p in dbc.Ciudades
-                                where p.N_Municipio == this.Ciudad.N_Municipio
+                    var borr = (from p in dbc.Estados
+                                where p.Estado_Vehiculo == this.Estado.Estado_Vehiculo
                                 select p).Single();
-                    dbc.Ciudades.Remove(borr);
+                    dbc.Estados.Remove(borr);
                     dbc.SaveChanges();
-                    this.Lista = new ObservableCollection<Ciudad>(dbc.Ciudades);
+                    this.Lista = new ObservableCollection<Estado>(dbc.Estados);
                 }
                 catch (Exception er)
                 {
@@ -105,16 +94,17 @@ namespace AUTOCAR.VistaModelo
 
         public void Modifica()
         {
-            if (this.Ciudad.N_Municipio == null)
+            if (this.Estado.Estado_Vehiculo == null)
             {
-                MessageBox.Show("No digitó la ciudad actualizar");
+                MessageBox.Show("No digitó el estado de vehiculo a modificar");
                 return;
             }
             using (var dbc = new ConexionDbContext())
             {
-                var ciudad = dbc.Ciudades.Find(this.Ciudad.CiudadID);
-                ciudad.CiudadID = this.Ciudad.CiudadID;
-                ciudad.N_Municipio = this.Ciudad.N_Municipio;
+                var Estado = dbc.Estados.Find(this.Estado.EstadoID);
+                //dbc.Razas.Attach(raza);
+                estado.Estado_Vehiculo = this.Estado.Estado_Vehiculo;
+
                 try
                 {
                     dbc.SaveChanges();
