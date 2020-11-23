@@ -13,7 +13,7 @@ namespace AUTOCAR.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202011071458503_Inicial"; }
+            get { return "202011232301594_Inicial"; }
         }
         
         string IMigrationMetadata.Source

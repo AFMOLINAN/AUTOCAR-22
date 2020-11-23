@@ -2,13 +2,13 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:vm="clr-namespace:AUTOCAR.VistaModelo"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"       
+        xmlns:vm1="clr-namespace:AUTOCAR.VistaModelo"
         mc:Ignorable="d"
         Title="Ciudad" Height="320.255" Width="780.292">
 
     <Window.DataContext>
-        <vm:CiudadVM />
+        <vm1:CiudadVM/>
     </Window.DataContext>
 
     <Grid Background="Orange">
@@ -35,7 +35,7 @@
                 <StackPanel Grid.Row="2" >
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="140">Departamento:</Label>
-                        <ComboBox ItemsSource="{Binding  ListaD, Mode=OneWay}" SelectedValue="{Binding Departamento.DepartamentoID}"  SelectedValuePath="DepartamentoID" Width="189">
+                        <ComboBox ItemsSource="{Binding  ListaD, Mode=OneWay}" SelectedValue="{Binding Ciudad.DepartamentoID}"  SelectedValuePath="DepartamentoID" Width="189">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">

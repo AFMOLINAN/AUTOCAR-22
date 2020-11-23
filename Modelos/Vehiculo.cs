@@ -54,10 +54,6 @@ namespace AUTOCAR.Modelos
         private string foto;
         public string Foto { get { return foto; } set { if (foto != value) { foto = value; OnPropertyChanged(); } } }
 
-        //[ForeignKey("oCiudad")]
-        public int CiudadID { get { return ciudadId; } set { if (ciudadId != value) { ciudadId = value; OnPropertyChanged(); } } }
-        private int ciudadId;
-        public virtual Ciudad oCiudad { get; set; }
 
         //[ForeignKey("oProveedor")]
         public int ProveedorID { get { return proveedorId; } set { if (proveedorId != value) { proveedorId = value; OnPropertyChanged(); } } }
