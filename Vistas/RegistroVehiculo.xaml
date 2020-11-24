@@ -4,10 +4,9 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:vm="clr-namespace:AUTOCAR.VistaModelo"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="Registro Vehiculos">
-    
+      mc:Ignorable="d"
+      Title="Registro Vehiculos" Height="577.692" Width="1056.205">
+
     <Window.DataContext>
         <vm:VehiculoVM/>
     </Window.DataContext>
@@ -63,7 +62,7 @@
                     <RowDefinition Height="31*" />
                     <RowDefinition Height="31*" />
                     <RowDefinition Height="31*" />
-                    <RowDefinition Height="31*" />
+
 
                 </Grid.RowDefinitions>
 
@@ -73,7 +72,7 @@
                 </Grid.ColumnDefinitions>
 
 
-                <StackPanel Grid.Row="0" Grid.ColumnSpan="2" >
+                <StackPanel Grid.Row="1" Grid.ColumnSpan="2" >
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
                         <TextBlock Text="Registro Vehiculos" FontSize="20" Foreground="Black" FontWeight="Bold" Width="173"/>
                     </StackPanel>
@@ -83,59 +82,45 @@
                         <Button Click="Salir" Margin="200,1,0,0">Salir</Button>
                     </StackPanel>
                 </StackPanel>
-                
+
                 <StackPanel Grid.Row="2" Grid.Column="0">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Placa</Label>
-                        <TextBox Text="{Binding Vehiculo.Placa}" Width="392"></TextBox>
+                        <TextBox Text="{Binding Vehiculo.Placa}"  Width="392"></TextBox>
                     </StackPanel>
                 </StackPanel>
+
                 <StackPanel Grid.Row="3" Grid.Column="0">
-                    <StackPanel  Orientation="Horizontal" >
-                        <Label Width="110">Ciudad</Label>
-                        <ComboBox ItemsSource="{Binding  ListaC, Mode=OneWay}" SelectedValue="{Binding Ciudad.CiudadID}"  SelectedValuePath="CuidadID" Width="392">
-                            <ComboBox.ItemTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding N_Municipio}" Width="300" Foreground="Tomato" />
-                                        <TextBlock Text="{Binding CiudadID}" Width="50"  Foreground="Tomato" ></TextBlock>
-                                    </StackPanel>
-                                </DataTemplate>
-                            </ComboBox.ItemTemplate>
-                        </ComboBox>
-                    </StackPanel>
-                </StackPanel>
-                <StackPanel Grid.Row="4" Grid.Column="0">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Cilindraje</Label>
                         <TextBox Text="{Binding Vehiculo.Cilindrada}" Width="392"></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="5" Grid.Column="0">
+                <StackPanel Grid.Row="4" Grid.Column="0">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Caballo de fuerza</Label>
                         <TextBox Text="{Binding Vehiculo.HP}" Width="392"></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="6" Grid.Column="0">
+                <StackPanel Grid.Row="5" Grid.Column="0">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Proveedor</Label>
-                        <ComboBox ItemsSource="{Binding  ListaP, Mode=OneWay}" SelectedValue="{Binding Proveedor.ProvedorID}"  SelectedValuePath="ProvedorID" Width="392">
+                        <ComboBox ItemsSource="{Binding  ListaP, Mode=OneWay}" SelectedValue="{Binding Vehiculo.ProveedorID}"  SelectedValuePath="ProveedorID" Width="392">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="{Binding Nombre}" Width="300" Foreground="Tomato" />
-                                        <TextBlock Text="{Binding ProvedorID}" Width="50"  Foreground="Tomato" ></TextBlock>
+                                        <TextBlock Text="{Binding ProveedorID}" Width="50"  Foreground="Tomato" ></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
                         </ComboBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="7" Grid.Column="0">
+                <StackPanel Grid.Row="6" Grid.Column="0">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Tipo Vehiculo</Label>
-                        <ComboBox ItemsSource="{Binding  ListaT, Mode=OneWay}" SelectedValue="{Binding Tipo_Vehiculo.Tipo_VehiculoID}"  SelectedValuePath="Tipo_VehiculoID" Width="392">
+                        <ComboBox ItemsSource="{Binding  ListaT, Mode=OneWay}" SelectedValue="{Binding Vehiculo.Tipo_VehiculoID}"  SelectedValuePath="Tipo_VehiculoID" Width="392">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -147,10 +132,10 @@
                         </ComboBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="8" Grid.Column="0">
+                <StackPanel Grid.Row="7" Grid.Column="0">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Estado Compra</Label>
-                        <ComboBox ItemsSource="{Binding  ListaEC, Mode=OneWay}" SelectedValue="{Binding Estado_Compra.Estado_CompraID}"  SelectedValuePath="Estado_CompraID" Width="392">
+                        <ComboBox ItemsSource="{Binding  ListaEC, Mode=OneWay}" SelectedValue="{Binding Vehiculo.Estado_CompraID}"  SelectedValuePath="Estado_CompraID" Width="392">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -162,10 +147,10 @@
                         </ComboBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="1" Grid.Column="1">
+                <StackPanel Grid.Row="2" Grid.Column="1">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Estado</Label>
-                        <ComboBox ItemsSource="{Binding  ListaE, Mode=OneWay}" SelectedValue="{Binding Estado.EstadoID}"  SelectedValuePath="EstadoID" Width="392">
+                        <ComboBox ItemsSource="{Binding  ListaE, Mode=OneWay}" SelectedValue="{Binding Vehiculo.EstadoID}"  SelectedValuePath="EstadoID" Width="392">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -177,10 +162,10 @@
                         </ComboBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="2" Grid.Column="1">
+                <StackPanel Grid.Row="3" Grid.Column="1">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Marca</Label>
-                        <ComboBox ItemsSource="{Binding  ListaM, Mode=OneWay}" SelectedValue="{Binding Marca.MarcaID}"  SelectedValuePath="MarcaID" Width="392">
+                        <ComboBox ItemsSource="{Binding  ListaM, Mode=OneWay}" SelectedValue="{Binding Vehiculo.MarcaID}"  SelectedValuePath="MarcaID" Width="392">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -192,10 +177,10 @@
                         </ComboBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="3" Grid.Column="1">
+                <StackPanel Grid.Row="4" Grid.Column="1">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Combustible</Label>
-                        <ComboBox ItemsSource="{Binding  ListaCB, Mode=OneWay}" SelectedValue="{Binding Combustible.CombustibleID}"  SelectedValuePath="CombustibleID" Width="392">
+                        <ComboBox ItemsSource="{Binding  ListaCB, Mode=OneWay}" SelectedValue="{Binding Vehiculo.CombustibleID}"  SelectedValuePath="CombustibleID" Width="392">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -207,41 +192,56 @@
                         </ComboBox>
                     </StackPanel>
                 </StackPanel>
-             
-                <StackPanel Grid.Row="4" Grid.Column="1">
+
+                <StackPanel Grid.Row="5" Grid.Column="1">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Precio Nuevo</Label>
                         <TextBox Text="{Binding Vehiculo.Precio_Nuevo}" Width="392"></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="5" Grid.Column="1">
+                <StackPanel Grid.Row="6" Grid.Column="1">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Precio Mercado</Label>
                         <TextBox Text="{Binding Vehiculo.Precio_Mercado}" Width="392"></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="6" Grid.Column="1">
+                <StackPanel Grid.Row="7" Grid.Column="1">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Width="110">Precio Concesionario</Label>
                         <TextBox Text="{Binding Vehiculo.Precio_Concesionario}" Width="392"></TextBox>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="7" Grid.Column="1">
-                    <StackPanel  Orientation="Horizontal" >
-                        <Label Width="110">Foto</Label>
-                        <TextBox Text="{Binding Vehiculo.Foto}" x:Name="txtEditor" Width="130"  Margin="0,0,5,0" Height="27"  />
-                        <WrapPanel HorizontalAlignment="Center" DockPanel.Dock="Top" Margin="0,0,0,10">
-                            <Button  x:Name="btnOpenFile" Click="btnOpenFile_Click" Height="25" Content="Cargar Foto"/>
-                        </WrapPanel>
-                    </StackPanel>
 
-                </StackPanel>
 
-                <StackPanel Grid.Row="9" Grid.Column="0">
+                <StackPanel Grid.Row="8" Grid.Column="0" Margin="10">
                     <Button Command="{Binding cmd_Insertar}" >Insertar</Button>
                 </StackPanel>
-                
-                
+                <StackPanel Grid.Row="9" Grid.Column="0">
+                    <Button Command="{Binding cmd_Modifica}" >Modificar</Button>
+                </StackPanel>
+                <StackPanel Grid.Row="10" Grid.Column="0">
+                    <Button Command="{Binding cmd_Consultar}" >Consultar</Button>
+                </StackPanel>
+
+                <StackPanel Grid.Row="8" Grid.Column="1" Grid.RowSpan="5" >
+                    <Border Margin="5" BorderBrush="BurlyWood"  Height="138" >
+                        <ListBox ItemsSource="{Binding Lista}" SelectedItem="{Binding Vehiculo}"  HorizontalAlignment="Right" Width="499" RenderTransformOrigin="0.409,0.515"  >
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding PLaca}" Width="20" Foreground="Blue" />
+                                        <TextBlock Text="{Binding Modelo}" Width="50" Foreground="Blue"/>
+                                        <TextBlock Text="{Binding Cilindrada}" Width="50" Foreground="Blue"/>
+                                        <TextBlock Text="{Binding ProveedorID}" Width="50" Foreground="Blue"/>
+                                        <TextBlock Text="{Binding MarcaID}" Width="50" Foreground="Blue"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Border>
+                </StackPanel>
+
+
             </Grid>
         </Border>
     </Grid>

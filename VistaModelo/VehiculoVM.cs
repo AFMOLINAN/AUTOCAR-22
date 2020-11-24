@@ -9,6 +9,8 @@ namespace AUTOCAR.VistaModelo
     class VehiculoVM : INotifyObject
     {
         public RelayCommand cmd_Insertar { get; set; }
+        public RelayCommand cmd_Modifica { get; set; }
+        public RelayCommand cmd_Consultar { get; set; }
 
         public Vehiculo Vehiculo { get { return vehiculo; } set { vehiculo = value; OnPropertyChanged(); } }
         private Vehiculo vehiculo;
@@ -34,9 +36,14 @@ namespace AUTOCAR.VistaModelo
         public ObservableCollection<Combustible> ListaCB { get { return listaCB; } set { listaCB = value; OnPropertyChanged(); } }
         private ObservableCollection<Combustible> listaCB = new ObservableCollection<Combustible>();
 
+        public ObservableCollection<Vehiculo> Lista { get { return lista; } set { lista = value; OnPropertyChanged(); } }
+        private ObservableCollection<Vehiculo> lista = new ObservableCollection<Vehiculo>();
+
         public VehiculoVM()
         {
             this.cmd_Insertar = new RelayCommand(p => this.Insertar());
+            this.cmd_Modifica = new RelayCommand(p => this.Modifica());
+            this.cmd_Consultar = new RelayCommand(p => this.Consultar());
             this.Vehiculo = new Vehiculo();
 
             using (var dbc = new ConexionDbContext())
@@ -49,6 +56,7 @@ namespace AUTOCAR.VistaModelo
                 this.ListaE = new ObservableCollection<Estado>(dbc.Estados);
                 this.ListaM = new ObservableCollection<Marca>(dbc.Marcas);
                 this.ListaCB = new ObservableCollection<Combustible>(dbc.Combustibles);
+                this.Lista = new ObservableCollection<Vehiculo>(dbc.Vehiculos);
 
             }
 
@@ -64,10 +72,18 @@ namespace AUTOCAR.VistaModelo
                     return;
                 }
                 dbc.Vehiculos.Add(this.Vehiculo);
+               
                 try
                 {
                     dbc.SaveChanges();
-                    
+                    MessageBox.Show("Se guardo correctamente ");
+                    this.Vehiculo.Placa = "";
+                    this.Vehiculo.Cilindrada = 0;
+                    this.Vehiculo.HP = 0;
+                    this.Vehiculo.Precio_Nuevo = 0;
+                    this.Vehiculo.Precio_Mercado = 0;
+                    this.Vehiculo.Precio_Concesionario = 0;
+                    this.Consultar();
                 }
                 catch (Exception er)
                 {
@@ -75,6 +91,50 @@ namespace AUTOCAR.VistaModelo
                     if (er.InnerException != null)
                         MessageBox.Show("Error " + er.InnerException.Message);
                 }
+            }
+        }
+
+        public void Modifica()
+        {
+            if (this.Vehiculo.Placa == null)
+            {
+                MessageBox.Show("Por favor seleccione un vehiculo ");
+                return;
+            }
+            using (var dbc = new ConexionDbContext())
+            {
+                var vehiculo = dbc.Vehiculos.Find(this.Vehiculo.VehiculoID);
+                vehiculo.VehiculoID = this.Vehiculo.VehiculoID;
+                vehiculo.Placa = this.Vehiculo.Placa;
+                vehiculo.Modelo = this.Vehiculo.Modelo;
+                vehiculo.Cilindrada = this.Vehiculo.Cilindrada;
+                vehiculo.HP = this.Vehiculo.HP;
+                vehiculo.Precio_Nuevo = this.Vehiculo.Precio_Nuevo;
+                vehiculo.Precio_Mercado = this.Vehiculo.Precio_Mercado;
+                vehiculo.Precio_Concesionario = this.Vehiculo.Precio_Concesionario;
+
+                try
+                {
+                    dbc.SaveChanges();
+                    MessageBox.Show("Se actualizo los registros ");
+                    this.Consultar();
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Error " + er.Message);
+                    if (er.InnerException != null)
+                        MessageBox.Show("Error " + er.InnerException.Message);
+                }
+            }
+        }
+
+        public void Consultar()
+        {
+            using (var dbc = new ConexionDbContext())
+            {
+                this.Lista = new ObservableCollection<Vehiculo>(dbc.Vehiculos);
+                
+
             }
         }
     }
