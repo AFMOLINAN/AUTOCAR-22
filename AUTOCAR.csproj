@@ -202,6 +202,17 @@
     <Compile Include="Modelos\Tipo_Pago.cs" />
     <Compile Include="Modelos\Tipo_Vehiculo.cs" />
     <Compile Include="Modelos\Vehiculo.cs" />
+    <Compile Include="Reportes\DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
     <Compile Include="VistaModelo\PagoVM.cs" />
     <Compile Include="Vistas\Pago.xaml.cs">
       <DependentUpon>Pago.xaml</DependentUpon>
@@ -376,7 +387,11 @@
     <EmbeddedResource Include="Reportes\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
+    <EmbeddedResource Include="Reportes\Report2.rdlc" />
     <None Include="BDAUTOCARDataSet.xsc">
       <DependentUpon>BDAUTOCARDataSet.xsd</DependentUpon>
     </None>
@@ -403,6 +418,17 @@
     </None>
     <None Include="Reportes\DataSet2.xss">
       <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Reportes\DataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Reportes\DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

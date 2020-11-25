@@ -51,6 +51,14 @@ namespace AUTOCAR
 
         }
 
+        private void InfoCompras(object sender, RoutedEventArgs e)
+        {
+            Form2 RV = new Form2();
+            RV.ShowDialog();
+
+
+        }
+
         private void Cliente(object sender, RoutedEventArgs e)
         {
             RegistroCliente RV = new RegistroCliente();
