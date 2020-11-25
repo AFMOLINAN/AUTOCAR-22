@@ -168,6 +168,7 @@
     <Compile Include="VistaModelo\EstadoVM.cs" />
     <Compile Include="VistaModelo\Estado_CompraVM.cs" />
     <Compile Include="VistaModelo\MarcaVM.cs" />
+    <Compile Include="VistaModelo\PagoVM.cs" />
     <Compile Include="VistaModelo\ProveedorVM.cs" />
     <Compile Include="VistaModelo\Tipo_PagoVM.cs" />
     <Compile Include="VistaModelo\Tipo_VehiculoVM.cs" />
@@ -189,6 +190,9 @@
     </Compile>
     <Compile Include="Vistas\Marcas.xaml.cs">
       <DependentUpon>Marcas.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Pago.xaml.cs">
+      <DependentUpon>Pago.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vistas\RegistroProveedor.xaml.cs">
       <DependentUpon>RegistroProveedor.xaml</DependentUpon>
@@ -242,6 +246,10 @@
     <Page Include="Vistas\Marcas.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Vistas\Pago.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\RegistroCliente.xaml">
       <SubType>Designer</SubType>
