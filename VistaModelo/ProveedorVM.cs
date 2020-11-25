@@ -14,7 +14,6 @@ namespace AUTOCAR.VistaModelo
     {
         public RelayCommand cmd_Insertar { get; set; }
         public RelayCommand cmd_Consultar { get; set; }
-        public RelayCommand cmd_Borrar { get; set; }
         public RelayCommand cmd_Modifica { get; set; }
 
         //public bool EsModifica { get; set; }
@@ -25,13 +24,24 @@ namespace AUTOCAR.VistaModelo
         public ObservableCollection<Proveedor> Lista { get { return lista; } set { lista = value; OnPropertyChanged(); } }
         private ObservableCollection<Proveedor> lista = new ObservableCollection<Proveedor>();
 
+        public ObservableCollection<Ciudad> ListaD { get { return listaD; } set { listaD = value; OnPropertyChanged(); } }
+        private ObservableCollection<Ciudad> listaD = new ObservableCollection<Ciudad>();
+
+
+
         public ProveedorVM()
         {
             this.cmd_Insertar = new RelayCommand(p => this.Insertar());
             this.cmd_Consultar = new RelayCommand(p => this.Consultar());
-            this.cmd_Borrar = new RelayCommand(p => this.Borrar());
             this.cmd_Modifica = new RelayCommand(p => this.Modifica());
             this.Proveedor = new Proveedor();
+
+            using (var dbc = new ConexionDbContext())
+            {
+                this.Lista = new ObservableCollection<Proveedor>(dbc.Proveedores);
+                this.ListaD = new ObservableCollection<Ciudad>(dbc.Ciudades);
+            }
+
         }
 
         public void Insertar()
@@ -47,6 +57,12 @@ namespace AUTOCAR.VistaModelo
                 try
                 {
                     dbc.SaveChanges();
+                    MessageBox.Show("Se guardo correctamente ");
+                    this.Proveedor.Tipo_Proveedor = "";
+                    this.Proveedor.N_Identificacion = "";
+                    this.Proveedor.Nombre = "";
+                    this.Proveedor.Direccion = "";
+                    this.Proveedor.Telefono = "";
                     this.Consultar();
                 }
                 catch (Exception er)
@@ -63,37 +79,11 @@ namespace AUTOCAR.VistaModelo
             using (var dbc = new ConexionDbContext())
             {
                 this.Lista = new ObservableCollection<Proveedor>(dbc.Proveedores);
+                this.ListaD = new ObservableCollection<Ciudad>(dbc.Ciudades);
             }
         }
 
-        public void Borrar()
-        {
-            if (this.Proveedor.Nombre == null)
-            {
-                MessageBox.Show("No digitó el proveedor a borrar");
-                return;
-            }
-
-            using (var dbc = new ConexionDbContext())
-            {
-                try
-                {
-                    var borr = (from p in dbc.Proveedores
-                                where p.Nombre == this.Proveedor.Nombre
-                                select p).Single();
-                    dbc.Proveedores.Remove(borr);
-                    dbc.SaveChanges();
-                    this.Lista = new ObservableCollection<Proveedor>(dbc.Proveedores);
-                }
-                catch (Exception er)
-                {
-                    MessageBox.Show("Error " + er.Message);
-                    if (er.InnerException != null)
-                        MessageBox.Show("Error " + er.InnerException.Message);
-                }
-            }
-        }
-
+ 
         public void Modifica()
         {
             if (this.Proveedor.Nombre == null)

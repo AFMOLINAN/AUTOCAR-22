@@ -13,22 +13,21 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-
 namespace AUTOCAR.Vistas
 {
     /// <summary>
-    /// Lógica de interacción para RegistroProveedor.xaml
+    /// Lógica de interacción para Pago.xaml
     /// </summary>
-    public partial class RegistroProveedor : Window
+    public partial class Pago : Window
     {
-        public RegistroProveedor()
+        public Pago()
         {
             InitializeComponent();
         }
+
         private void Salir(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
     }
 }
