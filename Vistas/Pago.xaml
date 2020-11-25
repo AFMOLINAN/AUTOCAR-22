@@ -62,7 +62,7 @@
                     <Label Margin="1,0,305,0">Sexo:</Label>
                 </StackPanel>
                 <StackPanel Grid.Row="4" Grid.Column="0">
-                    <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0" Click="ConsultarCliente" >Consultar Cliente</Button>
+                    <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0"  >Consultar Cliente</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="5" Grid.ColumnSpan="2">
                     <StackPanel Orientation="Horizontal"  >
@@ -89,7 +89,7 @@
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="9" Grid.Column="0">
-                    <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0" Click="ConsultarCarro" Height="21" Content="Consultar Carro" />
+                    <Button Command="{Binding cmd_Insertar}" Margin="10,0,10,0"  Height="21" Content="Consultar Carro" />
                 </StackPanel>
                 <StackPanel Grid.Row="10" Grid.ColumnSpan="1">
                     <StackPanel Orientation="Horizontal"  >

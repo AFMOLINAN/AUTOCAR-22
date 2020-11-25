@@ -168,14 +168,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Migrations\202011232301594_Inicial.cs" />
-    <Compile Include="Migrations\202011232301594_Inicial.designer.cs">
-      <DependentUpon>202011232301594_Inicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202011232350124_Inicial1.cs" />
-    <Compile Include="Migrations\202011232350124_Inicial1.designer.cs">
-      <DependentUpon>202011232350124_Inicial1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelos\Ciudad.cs" />
     <Compile Include="Modelos\Cliente.cs" />
@@ -335,9 +327,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\202011241616183_uno.resx">
-      <DependentUpon>202011241616183_uno.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
