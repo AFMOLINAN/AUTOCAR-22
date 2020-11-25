@@ -10,20 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace AUTOCAR.Vistas
+namespace AUTOCAR.Modelos
 {
     /// <summary>
-
-    public partial class Pago : Page
+    /// Lógica de interacción para Venta.xaml
+    /// </summary>
+    public partial class Venta : Window
     {
-        public Pago()
+        public Venta()
         {
             InitializeComponent();
         }
-
     }
-              
 }

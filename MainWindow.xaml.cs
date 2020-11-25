@@ -48,11 +48,7 @@ namespace AUTOCAR
         }
 
        
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+        
         private void ReporteVehiculo(object sender, RoutedEventArgs e)
         {
             Form1 RV = new Form1();
@@ -61,6 +57,13 @@ namespace AUTOCAR
 
         }
 
+        private void Cliente(object sender, RoutedEventArgs e)
+        {
+            RegistroCliente RV = new RegistroCliente();
+            RV.Show();
+        }
+
+        
     }
         
 }
