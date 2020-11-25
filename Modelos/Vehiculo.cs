@@ -50,7 +50,8 @@ namespace AUTOCAR.Modelos
         private int precio_concesionario;
         public int Precio_Concesionario { get { return precio_concesionario; } set { if (precio_concesionario != value) { precio_concesionario = value; OnPropertyChanged(); } } }
 
-        
+       
+
 
 
         //[ForeignKey("oProveedor")]

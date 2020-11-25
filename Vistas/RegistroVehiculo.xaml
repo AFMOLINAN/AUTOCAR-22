@@ -64,8 +64,7 @@
                     <RowDefinition Height="31*" />
                     <RowDefinition Height="31*" />
                     <RowDefinition Height="31*" />
-
-
+                  
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -103,7 +102,7 @@
                             </TransformGroup>
                         </StackPanel.RenderTransform>
                         <Label Width="110" Foreground="White">Cilindraje</Label>
-                        <TextBox Text="{Binding Vehiculo.Cilindrada}" Width="179" TextChanged="TextBox_TextChanged"></TextBox>
+                        <TextBox Text="{Binding Vehiculo.Cilindrada}" Width="179" ></TextBox>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="4" Grid.Column="0">
@@ -115,12 +114,12 @@
                 <StackPanel Grid.Row="5" Grid.Column="0">
                     <StackPanel  Orientation="Horizontal" Margin="0,0,105,0" >
                         <Label Foreground="White" Width="110">Proveedor</Label>
-                        <ComboBox ItemsSource="{Binding  ListaP, Mode=OneWay}" SelectedValue="{Binding Vehiculo.ProveedorID}"  SelectedValuePath="ProveedorID" Width="179" SelectionChanged="ComboBox_SelectionChanged_1">
+                        <ComboBox ItemsSource="{Binding  ListaP, Mode=OneWay}" SelectedValue="{Binding Vehiculo.ProveedorID}"  SelectedValuePath="ProveedorID" Width="179">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Nombre}" Width="100" Foreground="Tomato" />
-                                        <TextBlock Text="{Binding ProveedorID}" Width="50"  Foreground="Tomato" ></TextBlock>
+                                        <TextBlock Text="{Binding Nombre}" Width="100" Foreground="Black" />
+                                        <TextBlock Text="{Binding ProveedorID}" Width="50"  Foreground="Black" ></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -134,8 +133,8 @@
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Tipo}" Width="100" Foreground="Tomato" />
-                                        <TextBlock Text="{Binding Tipo_VehiculoID}" Width="50"  Foreground="Tomato" ></TextBlock>
+                                        <TextBlock Text="{Binding Tipo}" Width="100" Foreground="Black" />
+                                        <TextBlock Text="{Binding Tipo_VehiculoID}" Width="50"  Foreground="Black" ></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -149,8 +148,8 @@
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Estado}" Width="100" Foreground="Tomato" />
-                                        <TextBlock Text="{Binding Estado_CompraID}" Width="50"  Foreground="Tomato" ></TextBlock>
+                                        <TextBlock Text="{Binding Estado}" Width="100" Foreground="Black" />
+                                        <TextBlock Text="{Binding Estado_CompraID}" Width="50"  Foreground="Black" ></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -164,8 +163,8 @@
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Estado_Vehiculo}" Width="100" Foreground="Tomato" />
-                                        <TextBlock Text="{Binding EstadoID}" Width="50"  Foreground="Tomato" ></TextBlock>
+                                        <TextBlock Text="{Binding Estado_Vehiculo}" Width="100" Foreground="Black" />
+                                        <TextBlock Text="{Binding EstadoID}" Width="50"  Foreground="Black" ></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -179,8 +178,8 @@
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding N_Marca}" Width="100" Foreground="Tomato" />
-                                        <TextBlock Text="{Binding MarcaID}" Width="50"  Foreground="Tomato" ></TextBlock>
+                                        <TextBlock Text="{Binding N_Marca}" Width="100" Foreground="Black" />
+                                        <TextBlock Text="{Binding MarcaID}" Width="50"  Foreground="Black" ></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -190,12 +189,12 @@
                 <StackPanel Grid.Row="4" Grid.Column="1">
                     <StackPanel  Orientation="Horizontal" >
                         <Label Foreground="White" Width="110">Combustible</Label>
-                        <ComboBox ItemsSource="{Binding  ListaCB, Mode=OneWay}" SelectedValue="{Binding Vehiculo.CombustibleID}"  SelectedValuePath="CombustibleID" Width="179" SelectionChanged="ComboBox_SelectionChanged">
+                        <ComboBox ItemsSource="{Binding  ListaCB, Mode=OneWay}" SelectedValue="{Binding Vehiculo.CombustibleID}"  SelectedValuePath="CombustibleID" Width="179">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Tipo}" Width="100" Foreground="Tomato" />
-                                        <TextBlock Text="{Binding CombustibleID}" Width="50"  Foreground="Tomato" ></TextBlock>
+                                        <TextBlock Text="{Binding Tipo}" Width="100" Foreground="Black" />
+                                        <TextBlock Text="{Binding CombustibleID}" Width="50"  Foreground="Black" ></TextBlock>
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -234,25 +233,25 @@
 
                 </StackPanel>
 
+
+
                 <StackPanel Grid.Row="7" Grid.RowSpan="4" Grid.ColumnSpan="2" Margin="264,36,85,10" >
-                    <Border Margin="23,5,0,5" BorderBrush="BurlyWood"  Height="138" >
-                        <ListBox ItemsSource="{Binding Lista}" SelectedItem="{Binding Vehiculo}" RenderTransformOrigin="0.501,0.457"  >
+                    <Border Margin="0,5" BorderBrush="BurlyWood"  Height="138" >
+                        <ListBox ItemsSource="{Binding Lista}" SelectedItem="{Binding Vehiculo}" RenderTransformOrigin="0.551,0.452"  >
                             <ListBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding PLaca}" Width="20" Foreground="Blue" />
-                                        <TextBlock Text="{Binding Modelo}" Width="50" Foreground="Blue"/>
-                                        <TextBlock Text="{Binding Cilindrada}" Width="50" Foreground="Blue"/>
-                                        <TextBlock Text="{Binding ProveedorID}" Width="50" Foreground="Blue"/>
-                                        <TextBlock Text="{Binding MarcaID}" Width="50" Foreground="Blue"/>
+                                        <TextBlock Text="{Binding Placa}" Width="80" Foreground="Black" />
+                                        <TextBlock Text="{Binding Modelo}" Width="80" Foreground="Black"/>
+                                        <TextBlock Text="{Binding Precio_Nuevo}" Width="80" Foreground="Black"/>
+                                        <TextBlock Text="{Binding Precio_Mercado}" Width="80" Foreground="Black"/>
+                                        <TextBlock Text="{Binding Precio_Concesionario}" Width="80" Foreground="Black"/>
                                     </StackPanel>
                                 </DataTemplate>
                             </ListBox.ItemTemplate>
                         </ListBox>
                     </Border>
                 </StackPanel>
-
-
             </Grid>
         </Border>
     </Grid>

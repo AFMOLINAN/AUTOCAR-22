@@ -172,6 +172,18 @@
     <Compile Include="Migrations\202011251728237_Inicial.designer.cs">
       <DependentUpon>202011251728237_Inicial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011251801331_Inicial1.cs" />
+    <Compile Include="Migrations\202011251801331_Inicial1.designer.cs">
+      <DependentUpon>202011251801331_Inicial1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011251815331_Inicial2.cs" />
+    <Compile Include="Migrations\202011251815331_Inicial2.designer.cs">
+      <DependentUpon>202011251815331_Inicial2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011251951497_Inicial3.cs" />
+    <Compile Include="Migrations\202011251951497_Inicial3.designer.cs">
+      <DependentUpon>202011251951497_Inicial3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelos\Ciudad.cs" />
     <Compile Include="Modelos\Cliente.cs" />
@@ -333,6 +345,15 @@
     </Compile>
     <EmbeddedResource Include="Migrations\202011251728237_Inicial.resx">
       <DependentUpon>202011251728237_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011251801331_Inicial1.resx">
+      <DependentUpon>202011251801331_Inicial1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011251815331_Inicial2.resx">
+      <DependentUpon>202011251815331_Inicial2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011251951497_Inicial3.resx">
+      <DependentUpon>202011251951497_Inicial3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
