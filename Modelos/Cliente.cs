@@ -21,6 +21,10 @@ namespace AUTOCAR.Modelos
         public int ClienteID { get { return clienteId; } set { if (clienteId != value) { clienteId = value; OnPropertyChanged(); } } }
         private int clienteId;
 
+     
+        private int cedula;
+        public int Cedula { get { return cedula; } set { if (cedula != value) { cedula = value; OnPropertyChanged(); } } }
+
         [StringLength(45)]
         private string nombre;
         public string Nombre { get { return nombre; } set { if (nombre != value) { nombre = value; OnPropertyChanged(); } } }

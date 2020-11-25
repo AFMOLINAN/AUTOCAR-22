@@ -11,7 +11,8 @@
         <vm:MarcaVM />
     </Window.DataContext>
 
-    <Grid Background="Orange">
+    <Grid >
+        <Image Source="/Imagenes/Fondo.jpeg" />
         <Border Margin="10" BorderBrush="Black" BorderThickness="5" CornerRadius="8">
             <Grid Height="248" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
@@ -22,12 +23,12 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" >
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
-                        <TextBlock Text="Registro Marcas" FontSize="20" Foreground="Black" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="Registro Marcas" FontSize="20" Foreground="White" FontWeight="Bold"></TextBlock>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="1" >
                     <StackPanel  Orientation="Horizontal" >
-                        <Label Width="140">Nombre Marca:</Label>
+                        <Label Width="140" Foreground="White" Margin="100,0,0,0">Nombre Marca:</Label>
                         <TextBox Text="{Binding Marca.N_Marca}" Width="186"></TextBox>
                     </StackPanel>
                 </StackPanel>

@@ -7,13 +7,13 @@ namespace AUTOCAR.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Inicial2 : IMigrationMetadata
+    public sealed partial class Inicial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Inicial2));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Inicial));
         
         string IMigrationMetadata.Id
         {
-            get { return "202011232353152_Inicial2"; }
+            get { return "202011251728237_Inicial"; }
         }
         
         string IMigrationMetadata.Source

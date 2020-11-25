@@ -1,13 +1,12 @@
 ﻿using System.Windows;
 using AUTOCAR.Vistas;
 using AUTOCAR.VistaModelo;
-
+using AUTOCAR.Reportes;
+using AUTOCAR.Modelos;
 
 namespace AUTOCAR
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
+  
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -36,23 +35,43 @@ namespace AUTOCAR
 
         }
 
+       
+
 
         private void Salir(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        
+        private void ReporteVehiculo(object sender, RoutedEventArgs e)
         {
+            Form1 RV = new Form1();
+            RV.ShowDialog();
+          
 
         }
 
         private void Cliente(object sender, RoutedEventArgs e)
         {
-
             RegistroCliente RV = new RegistroCliente();
             RV.Show();
+        }
+
+        private void RegistroCliente(object sender, RoutedEventArgs e)
+        {
+            RegistroCliente RP = new RegistroCliente();
+            RP.ShowDialog();
 
         }
+
+        private void Venta(object sender, RoutedEventArgs e)
+        {
+            Venta RP = new Venta();
+            RP.ShowDialog();
+
+        }
+
+
     }
+        
 }

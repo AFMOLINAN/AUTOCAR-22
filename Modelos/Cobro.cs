@@ -7,9 +7,9 @@ namespace AUTOCAR.Modelos
     {
 
         [Key]
-        
         public int CobroID { get { return cobroId; } set { if (cobroId != value) { cobroId = value; OnPropertyChanged(); } } }
         private int cobroId;
+
         [StringLength(30)]
         private DateTime fecha_cobro;
         public DateTime Fecha_Cobro { get { return fecha_cobro; } set { if (fecha_cobro != value) { fecha_cobro = value; OnPropertyChanged(); } } }
@@ -22,6 +22,7 @@ namespace AUTOCAR.Modelos
         //[ForeignKey("oTipo_Pago")]
         public int Tipo_PagoID { get { return tipo_pagoId; } set { if (tipo_pagoId != value) { tipo_pagoId = value; OnPropertyChanged(); } } }
         private int tipo_pagoId;
+        
         public virtual Tipo_Pago oTipo_Pago { get; set; }
 
         //[ForeignKey("oCliente")]

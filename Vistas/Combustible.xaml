@@ -10,7 +10,7 @@
         <vm:CombustibleVM></vm:CombustibleVM>
     </Window.DataContext>
 
-    <Grid Background="Orange">
+    <Grid ><Image Source="/Imagenes/Fondo.jpeg" />
         <Border Margin="10" BorderBrush="Black" BorderThickness="5" CornerRadius="8">
             <Grid Height="248" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
@@ -21,12 +21,12 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" >
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
-                        <TextBlock Text="Registro Combustible" FontSize="20" Foreground="Black" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="Registro Combustible" FontSize="20" Foreground="White" FontWeight="Bold"></TextBlock>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="1" >
                     <StackPanel  Orientation="Horizontal" >
-                        <Label Width="140">Tipo Combustible:</Label>
+                        <Label Width="140" Margin="100,0,0,0" Foreground="White">Tipo Combustible:</Label>
                         <TextBox Text="{Binding Combustible.Tipo}" Width="186"></TextBox>
                     </StackPanel>
                 </StackPanel>
@@ -67,8 +67,8 @@
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="{Binding Tipo}" Width="200" Foreground="Blue" />
-                                                <TextBlock Text="{Binding CombustibleID}" Foreground="Blue"/>
+                                                <TextBlock Text="{Binding Tipo}" Width="200" Foreground="Black" />
+                                                <TextBlock Text="{Binding CombustibleID}" Foreground="Black"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>

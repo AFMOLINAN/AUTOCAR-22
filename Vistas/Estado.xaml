@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:AUTOCAR.VistaModelo"
         mc:Ignorable="d"
-        Title="Estado" Height="320.255" Width="780.292">
+        Title="Estado" Height="316.953" Width="775.89">
     <Window.DataContext>
         <vm:EstadoVM />
     </Window.DataContext>
     
-    <Grid Background="Orange">
+    <Grid >
+        <Image Source="/Imagenes/Fondo.jpeg" />
         <Border Margin="10" BorderBrush="Black" BorderThickness="5" CornerRadius="8">
             <Grid Height="248" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
@@ -21,13 +22,13 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" >
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
-                        <TextBlock Text="Registro Estado" FontSize="20" Foreground="Black" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="Registro Estado" FontSize="20" Foreground="White" FontWeight="Bold"></TextBlock>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="1" >
                     <StackPanel  Orientation="Horizontal" >
-                        <Label Width="140">Estado:</Label>
-                        <TextBox Text="{Binding Estado.Estado_Vehiculo}" Width="186"></TextBox>
+                        <Label Width="140" Foreground="White" Margin="100,0,0,0">Estado:</Label>
+                        <TextBox Text="{Binding Estado.Estado_Vehiculo}" Width="201"></TextBox>
                     </StackPanel>
                 </StackPanel>
 
