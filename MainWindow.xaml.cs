@@ -70,6 +70,12 @@ namespace AUTOCAR
             RP.ShowDialog();
 
         }
+        private void Pago(object sender, RoutedEventArgs e)
+        {
+            Vistas.Pago RV = new Vistas.Pago();
+            RV.Show();
+
+        }
 
 
     }

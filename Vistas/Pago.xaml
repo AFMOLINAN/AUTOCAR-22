@@ -1,86 +1,150 @@
 ﻿<Window x:Class="AUTOCAR.Vistas.Pago"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:vm="clr-namespace:AUTOCAR.VistaModelo"
-      xmlns:sys="clr-namespace:System;assembly=mscorlib"
-      mc:Ignorable="d"
-      Title="Compras" Height="337" Width="681">
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AUTOCAR.Vistas"
+        xmlns:vm="clr-namespace:AUTOCAR.VistaModelo"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+       
+        mc:Ignorable="d"
+        Title="Pago" Height="450" Width="800">
 
     <Window.DataContext>
         <vm:PagoVM/>
     </Window.DataContext>
 
-    <Grid Background="Orange" Margin="0,0,0,-1">
-        <Border Margin="10" BorderBrush="Black" BorderThickness="5" CornerRadius="8">
-            <Grid Height="246" VerticalAlignment="Top">
+
+    <Grid >
+        <Image Source="/Imagenes/Fondo.jpeg" Width="1500"/>
+
+
+
+        <Border Margin="10" BorderBrush="Black" BorderThickness="5,5,5,5" CornerRadius="8,8,8,8">
+            <Grid Margin="0,0,5,5">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="31"/>
-                    <RowDefinition Height="31"/>
-                    <RowDefinition Height="31"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+                    <RowDefinition Height="31*" />
+
                 </Grid.RowDefinitions>
-                <StackPanel Grid.Row="0" Grid.Column="1">
-                    <StackPanel  Orientation="Horizontal" />
-                </StackPanel>
-                <StackPanel Grid.Row="0" >
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="30*" />
+                </Grid.ColumnDefinitions>
+
+
+                <StackPanel Grid.Row="0" Grid.ColumnSpan="2" >
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
-                        <TextBlock Text="Compra del vehículo" FontSize="20" Foreground="Black" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="Pagos" FontSize="25" Foreground="White" FontWeight="Bold" Width="184"/>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="1" >
-                    <StackPanel  Orientation="Horizontal" >
-                        <Label Width="100">Fecha pago:</Label>
-                        <DatePicker DisplayDate="{x:Static sys:DateTime.Now}" SelectedDate="{Binding Pago.Fecha_Pago, Mode=TwoWay}" 
-                                    Width="183" IsEnabled="True" />
-                        <Button Click="Salir" Margin="200,1,0,0" Content="Salir" Width="92" Height="27"/>
+                <StackPanel Grid.Row="0" Grid.Column="1">
+                    <StackPanel  Orientation="Horizontal" RenderTransformOrigin="0.388,0.643" >
+                        <Button Click="Salir" Margin="200,1,0,0" Width="81" Content="Salir"/>
                     </StackPanel>
                 </StackPanel>
 
-                <StackPanel Grid.Row="2" >
-                    <StackPanel  Orientation="Horizontal" >
-                        <Label Width="100" Content="Valor Compra:"/>
-                        <TextBox Text="{Binding Pago.Valor_Compra}" Width="186"/>
+                <StackPanel Grid.Row="2" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal"  >
+                        <Label Margin="85,0,0,0" Width="109" Foreground="White">Fecha Pago</Label>
+                        <DatePicker DisplayDate="{x:Static sys:DateTime.Now}" SelectedDate="{Binding Pago.Fecha_Pago, Mode=TwoWay}" Width="183" IsEnabled="True" />
                     </StackPanel>
                 </StackPanel>
 
-                <StackPanel Grid.Row="3" Margin="0,0,0,123" >
-                    <StackPanel  Orientation="Horizontal" >
-                        <Label Width="100">Iva:</Label>
-                        <TextBox Text="{Binding Proveedor.Nombre}" Width="186"></TextBox>
-                    </StackPanel>
-
-                </StackPanel>
-
-
-                <StackPanel Grid.Row="4" Margin="0,32,0,94" >
-                    <StackPanel  Orientation="Horizontal" Height="24" >
-                        <Label Width="100" Content="Total:"/>
-                        <TextBox Text="{Binding Proveedor.Direccion}" Width="186"/>
+                <StackPanel Grid.Row="3" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" Margin="0,0,85,0" RenderTransformOrigin="0.5,0.5" >
+                        <Label Margin="85,0,0,0" Width="110" Foreground="White">Valor Compra</Label>
+                        <TextBox Text="{Binding Pago.Valor_Compra}" Width="163" ></TextBox>
                     </StackPanel>
                 </StackPanel>
-
-                <StackPanel Grid.Row="5" Margin="0,61,0,66" >
-                    <StackPanel  Orientation="Horizontal" Height="24" >
-                        <Label Width="100" Content="Telefono:"/>
-                        <TextBox Text="{Binding Proveedor.Telefono}" Width="186"/>
+                <StackPanel Grid.Row="4" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" Margin="0,0,85,0" >
+                        <Label Margin="85,0,0,0" Foreground="White" Width="110">Proveedor</Label>
+                        <ComboBox ItemsSource="{Binding  ListaP, Mode=OneWay}" SelectedValue="{Binding Pago.ProveedorID}"  SelectedValuePath="ProveedorID" Width="163">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Nombre}" Width="100" Foreground="Black" />
+                                        <TextBlock Text="{Binding ProveedorID}" Width="45"  Foreground="Black" ></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="5" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" Margin="0,0,85,0" >
+                        <Label Margin="85,0,0,0" Foreground="White" Width="110"> Vehiculo</Label>
+                        <ComboBox ItemsSource="{Binding  ListaV, Mode=OneWay}" SelectedValue="{Binding Pago.VehiculoID}"  SelectedValuePath="VehiculoID" Width="163">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Placa}" Width="100" Foreground="Black" />
+                                        <TextBlock Text="{Binding VehiculoID}" Width="45"  Foreground="Black" ></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Grid.Row="6" Grid.Column="0">
+                    <StackPanel  Orientation="Horizontal" Margin="0,0,85,0" >
+                        <Label Margin="85,0,0,0" Foreground="White" Width="110"> Tipo Pago</Label>
+                        <ComboBox ItemsSource="{Binding  ListaT, Mode=OneWay}" SelectedValue="{Binding Pago.Tipo_PagoID}"  SelectedValuePath="Tipo_PagoID" Width="163">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Metodo_Pago}" Width="100" Foreground="Black" />
+                                        <TextBlock Text="{Binding Tipo_PagoID}" Width="45"  Foreground="Black" ></TextBlock>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
                     </StackPanel>
                 </StackPanel>
 
-                <StackPanel Grid.Row="6" Margin="0,91,0,40" >
-                    <StackPanel  Orientation="Horizontal" Height="25" >
-                        <Label Width="100" Content="Ciudad:"/>
-                        <TextBox Text="{Binding Proveedor.CiudadID}" Width="186"/>
-                    </StackPanel>
+                <StackPanel Grid.Row="8" Grid.Column="0" >
+                    <Button Command="{Binding cmd_Insertar}" Margin="93,0,142,0" Width="Auto" Height="30" >Insertar</Button>
                 </StackPanel>
                 <StackPanel Grid.Row="9" Grid.Column="0">
-                    <Button Command="{Binding cmd_Insertar}" Margin="482,0,69,0" Height="30" >Insertar</Button>
+                    <Button Command="{Binding cmd_Modifica}" Margin="93,0,142,0" Width="Auto" Height="30" >Modificar</Button>
                 </StackPanel>
-                <StackPanel Grid.Row="9" Grid.Column="0">
-                    <Button Command="{Binding cmd_Consultar}" Margin="482,40,69,0" Height="30" >Consultar</Button>
+                <StackPanel Grid.Row="10" Grid.Column="0">
+                    <Button Command="{Binding cmd_Consultar}" Margin="93,0,142,0" Width="Auto" Height="30" >Consultar</Button>
+
                 </StackPanel>
 
+
+
+                <StackPanel Grid.Row="4" Grid.RowSpan="4" Grid.ColumnSpan="2" Margin="385,24,99,20" >
+                    <Border Margin="0,5,39,5" BorderBrush="BurlyWood"  Height="112" />
+                </StackPanel>
+
+                <StackPanel Grid.Row="4" Grid.RowSpan="5" Grid.ColumnSpan="2" Margin="359,0,0,0">
+                    <Border Margin="28,5,5,5" BorderBrush="BurlyWood" BorderThickness="3,3,1,1" CornerRadius="8,8,8,8" Height="161" >
+                        <ListBox ItemsSource="{Binding Lista}" SelectedItem="{Binding Pago}" Margin="-3,0,0,0"  >
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Fecha_Pago}" Width="200" Foreground="Black" />
+                                        <TextBlock Text="{Binding  Valor_Compra}" Foreground="Blue"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Border>
+                </StackPanel>
             </Grid>
         </Border>
     </Grid>

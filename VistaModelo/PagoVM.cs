@@ -1,10 +1,6 @@
 ﻿using AUTOCAR.Modelos;
 using System;
 using System.Collections.ObjectModel;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AUTOCAR.Data;
 using System.Windows;
 
@@ -45,6 +41,7 @@ namespace AUTOCAR.VistaModelo
                 this.ListaV = new ObservableCollection<Vehiculo>(dbc.Vehiculos);
                 this.ListaT = new ObservableCollection<Tipo_Pago>(dbc.Tipo_Pagos);
             }
+            this.Pago.Fecha_Pago = DateTime.Now.Date;
 
         }
 
@@ -63,8 +60,6 @@ namespace AUTOCAR.VistaModelo
                     dbc.SaveChanges();
                     MessageBox.Show("Se guardo correctamente ");
                     this.Pago.Valor_Compra = 0;
-                    this.Pago.Iva = 0;
-                    this.Pago.Total = 0;
                     this.Consultar();
                 }
                 catch (Exception er)

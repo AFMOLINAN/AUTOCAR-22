@@ -24,13 +24,6 @@ namespace AUTOCAR.Modelos
         private int valor_compra;
         public int Valor_Compra { get { return valor_compra; } set { if (valor_compra != value) { valor_compra = value; OnPropertyChanged(); } } }
 
-        
-        private decimal iva;
-        public decimal Iva { get { return iva; } set { if (iva != value) { iva = value; OnPropertyChanged(); } } }
-
-        
-        private decimal total;
-        public decimal Total { get { return total; } set { if (total != value) { total = value; OnPropertyChanged(); } } }
 
         //[ForeignKey("oProveedor")]
         public int ProveedorID { get { return proveedorId; } set { if (proveedorId != value) { proveedorId = value; OnPropertyChanged(); } } }

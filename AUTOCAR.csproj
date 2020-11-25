@@ -184,6 +184,10 @@
     <Compile Include="Migrations\202011251951497_Inicial3.designer.cs">
       <DependentUpon>202011251951497_Inicial3.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011252106232_Inicial4.cs" />
+    <Compile Include="Migrations\202011252106232_Inicial4.designer.cs">
+      <DependentUpon>202011252106232_Inicial4.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelos\Ciudad.cs" />
     <Compile Include="Modelos\Cliente.cs" />
@@ -198,6 +202,13 @@
     <Compile Include="Modelos\Tipo_Pago.cs" />
     <Compile Include="Modelos\Tipo_Vehiculo.cs" />
     <Compile Include="Modelos\Vehiculo.cs" />
+    <Compile Include="VistaModelo\PagoVM.cs" />
+    <Compile Include="Vistas\Pago.xaml.cs">
+      <DependentUpon>Pago.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\RegistroCliente.xaml.cs">
+      <DependentUpon>RegistroCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\Venta.xaml.cs">
       <DependentUpon>Venta.xaml</DependentUpon>
     </Compile>
@@ -222,7 +233,6 @@
     <Compile Include="VistaModelo\EstadoVM.cs" />
     <Compile Include="VistaModelo\Estado_CompraVM.cs" />
     <Compile Include="VistaModelo\MarcaVM.cs" />
-    <Compile Include="VistaModelo\PagoVM.cs" />
     <Compile Include="VistaModelo\ProveedorVM.cs" />
     <Compile Include="VistaModelo\Tipo_PagoVM.cs" />
     <Compile Include="VistaModelo\Tipo_VehiculoVM.cs" />
@@ -274,6 +284,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Vistas\Pago.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Vistas\RegistroCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Vistas\Venta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -301,14 +319,6 @@
     <Page Include="Vistas\Marcas.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Vistas\Pago.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Vistas\RegistroCliente.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vistas\RegistroProveedor.xaml">
       <SubType>Designer</SubType>
@@ -356,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202011251951497_Inicial3.resx">
       <DependentUpon>202011251951497_Inicial3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011252106232_Inicial4.resx">
+      <DependentUpon>202011252106232_Inicial4.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
