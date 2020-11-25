@@ -20,8 +20,11 @@ namespace AUTOCAR.VistaModelo
         public Cliente Cliente { get { return cliente;  } set { cliente = value; OnPropertyChanged(); } }
         private Cliente cliente;
 
-        public ObservableCollection<Cliente> Lista { get { return Lista; } set { Lista = value; OnPropertyChanged(); } }
+        public ObservableCollection<Cliente> Lista { get { return lista; } set { lista = value; OnPropertyChanged(); } }
         private ObservableCollection<Cliente> lista = new ObservableCollection<Cliente>();
+
+        public ObservableCollection<Ciudad> ListaC { get { return listaC; } set { listaC = value; OnPropertyChanged(); } }
+        private ObservableCollection<Ciudad> listaC = new ObservableCollection<Ciudad>();
 
 
         public ClienteVM()
@@ -31,6 +34,15 @@ namespace AUTOCAR.VistaModelo
             this.cmd_Borrar = new RelayCommand(p => this.Borrar());
             this.cmd_Modifica = new RelayCommand(p => this.Modifica());
             this.Cliente = new Cliente();
+
+            using (var dbc = new ConexionDbContext())
+            {
+                this.Lista = new ObservableCollection<Cliente>(dbc.Clientes);
+                this.ListaC = new ObservableCollection<Ciudad>(dbc.Ciudades);
+
+            }
+
+           
         }
 
 
@@ -48,6 +60,7 @@ namespace AUTOCAR.VistaModelo
                 try
                 {
                     dbc.SaveChanges();
+                    MessageBox.Show("Se agrego nuevo cliente");
                     this.Consultar();
                 }
                 catch (Exception er)
@@ -70,6 +83,7 @@ namespace AUTOCAR.VistaModelo
             using (var dbc = new ConexionDbContext())
             {
                 this.Lista = new ObservableCollection<Cliente>(dbc.Clientes);
+                this.ListaC = new ObservableCollection<Ciudad>(dbc.Ciudades);
             }
         }
 

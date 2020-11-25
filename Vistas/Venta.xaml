@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:AUTOCAR.Modelos"
         xmlns:vm="clr-namespace:AUTOCAR.VistaModelo" 
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="Venta" Height="450" Width="800">
+        Title="Venta" Height="396" Width="800">
 
     <Window.DataContext>
         <vm:CobroVM/>
@@ -14,7 +15,9 @@
 
 
     <Grid Background="Orange">
-        <Border Margin="10" BorderBrush="Black" BorderThickness="5,5,1,1" CornerRadius="8,8,8,8">
+        <Image Source="/Imagenes/Fondo.jpeg" Margin="-20,-18,-206,-26"/>
+
+        <Border Margin="10" BorderBrush="Black" BorderThickness="5" CornerRadius="8">
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="31"/>
@@ -24,30 +27,25 @@
                     <RowDefinition Height="31"/>
                     <RowDefinition Height="31"/>
                     <RowDefinition Height="31"/>
-                    <RowDefinition Height="31"/>
+                    
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" >
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
-                        <TextBlock Text="Ventas de Articulos" FontSize="20" Foreground="Brown" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="Ventas de Articulos" FontSize="20" Foreground="White" FontWeight="Bold"></TextBlock>
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="1" >
-                    <StackPanel  Orientation="Horizontal" >
-                        <Label Width="110" Content="No. de Factura :"/>
-                        <TextBox Text="{Binding Cobro.CobroID}" Width="392"></TextBox>
-                    </StackPanel>
-                </StackPanel>
+               
 
-                <StackPanel Grid.Row="2" >
+                <StackPanel Grid.Row="1" >
                     <StackPanel Orientation="Horizontal"  >
-                        <Label Width="110" Content="Cliente :"/>
-                        <ComboBox ItemsSource="{Binding  ListaR, Mode=OneWay}" SelectedValue="{Binding Cobro.ClienteID}"  SelectedValuePath="ClienteID" Width="391">
+                        <Label Foreground="White" Margin="100,0,0,0" Width="110" Content="Cliente :"/>
+                        <ComboBox ItemsSource="{Binding  ListaC, Mode=OneWay}" SelectedValue="{Binding Cobro.ClienteID}"  SelectedValuePath="ClienteID" Width="391">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
                                         <TextBlock Text="{Binding Nombre}" Width="300" Foreground="Tomato" />
-                                        <TextBlock Text="{Binding ArticuloID}" Width="100" Foreground="Tomato" />
+                                        <TextBlock Text="{Binding ClienteID}" Width="100" Foreground="Tomato" />
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -55,15 +53,31 @@
 
                     </StackPanel>
                 </StackPanel>
-                <StackPanel Grid.Row="3" >
+                <StackPanel Grid.Row="2" >
                     <StackPanel Orientation="Horizontal"  >
-                        <Label Width="110" Content="Vehiculo :"/>
-                        <ComboBox ItemsSource="{Binding  ListaC, Mode=OneWay}" SelectedValue="{Binding Cobro.VehiculoID}"  SelectedValuePath="VehiculoID" Width="391">
+                        <Label Foreground="White" Margin="100,0,0,0" Width="110" Content="Vehiculo :"/>
+                        <ComboBox ItemsSource="{Binding  ListaV, Mode=OneWay}" SelectedValue="{Binding Cobro.VehiculoID}"  SelectedValuePath="VehiculoID" Width="391">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
-                                        <TextBlock Text="{Binding Nombre}" Width="300" Foreground="Tomato" />
-                                        <TextBlock Text="{Binding MarcaID}" Width="100" Foreground="Tomato" />
+                                        <TextBlock Text="{Binding Placa}" Width="300" Foreground="Tomato" />
+                                        <TextBlock Text="{Binding VehiculoID}" Width="100" Foreground="Tomato" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                    </StackPanel>
+                </StackPanel>
+
+                <StackPanel Grid.Row="3" >
+                    <StackPanel Orientation="Horizontal"  >
+                        <Label Foreground="White" Margin="100,0,0,0" Width="110" Content="Tipo de Pago :"/>
+                        <ComboBox ItemsSource="{Binding  ListaT, Mode=OneWay}" SelectedValue="{Binding Cobro.Tipo_PagoID}"  SelectedValuePath="Tipo_PagoID" Width="391">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Text="{Binding Metodo_Pago}" Width="300" Foreground="Tomato" />
+                                        <TextBlock Text="{Binding Tipo_PagoID}" Width="100" Foreground="Tomato" />
                                     </StackPanel>
                                 </DataTemplate>
                             </ComboBox.ItemTemplate>
@@ -73,25 +87,13 @@
 
                 <StackPanel Grid.Row="4" >
                     <StackPanel Orientation="Horizontal"  >
-                        <Label Width="110" Content="Tipo de Pago :"/>
-                        <ComboBox Name="ComboTipoPago" SelectionChanged="Combocarne_SelectionChanged" Width="391">
-                            <ComboBoxItem IsSelected="True">Efectivo</ComboBoxItem>
-                            <ComboBoxItem>Consignacion</ComboBoxItem>
-                            <ComboBoxItem>Cheque</ComboBoxItem>
-                            <ComboBoxItem>Tarjeta Credito / Debito</ComboBoxItem>
-                        </ComboBox>
+                        <Label Foreground="White"  Margin="100,0,0,0" Width="110">Fecha:</Label>
+                        <DatePicker DisplayDate="{x:Static sys:DateTime.Now}" SelectedDate="{Binding Cobro.Fecha_Cobro, Mode=TwoWay}" Width="183" IsEnabled="True" />
                     </StackPanel>
                 </StackPanel>
-
                 <StackPanel Grid.Row="5" >
                     <StackPanel Orientation="Horizontal"  >
-                        <Label Width="110" Content="Fecha :"/>
-                        <TextBox Text="{Binding Cobro.Fecha_Cobro}" Width="183"></TextBox>
-                    </StackPanel>
-                </StackPanel>
-                <StackPanel Grid.Row="6" >
-                    <StackPanel Orientation="Horizontal"  >
-                        <Label Width="110" Content="Total $ :"/>
+                        <Label Foreground="White" Margin="100,0,0,0" Width="110" Content="Total $ :"/>
                         <TextBox Text="{Binding Cobro.Total}" Width="183"></TextBox>
                     </StackPanel>
                 </StackPanel>
@@ -122,8 +124,8 @@
                             <Button Command="{Binding cmd_Consultar}" Margin="5">Consultar</Button>
                         </StackPanel>
                         <StackPanel Grid.Row="4" Grid.Column="0">
-                            <Button Click="venta_salir" Margin="5">Salir</Button>
-                            <!-- <misCon:BotonA Texto="Salir" /> -->
+                            <Button Click="Salir" Margin="5">Salir</Button>
+                           
                         </StackPanel>
                         <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="5">
                             <Border Margin="5" BorderBrush="Black" BorderThickness="3,3,1,1" CornerRadius="8,8,8,8" Height="138" >
@@ -131,9 +133,12 @@
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="{Binding Nombre}" Width="400" Foreground="Blue" />
-                                                <TextBlock Text="{Binding  FechaNac}" Width="150" Foreground="Blue" />
-                                                <TextBlock Text="{Binding VentaID}" Foreground="Blue"/>
+                                                <TextBlock Text="{Binding Fecha_Cobro}" Width="100" Foreground="Black" />
+                                                <TextBlock Text="{Binding  Total}" Width="100" Foreground="Black" />
+                                                <TextBlock Text="{Binding  Tipo_PagoID}" Width="100" Foreground="Black" />
+                                                <TextBlock Text="{Binding  ClienteID}" Width="100" Foreground="Black" />
+                                                <TextBlock Text="{Binding  VehiculoID}" Width="100" Foreground="Black" />
+                                                <TextBlock Text="{Binding CobroID}" Width="100" Foreground="Black"/>
                                             </StackPanel>
                                         </DataTemplate>
                                     </ListBox.ItemTemplate>

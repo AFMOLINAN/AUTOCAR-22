@@ -23,5 +23,10 @@ namespace AUTOCAR.Modelos
         {
             InitializeComponent();
         }
+
+        private void Salir(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

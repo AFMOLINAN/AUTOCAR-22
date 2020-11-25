@@ -17,15 +17,11 @@ namespace AUTOCAR.Vistas
             InitializeComponent();
         }
 
-        private void Guardar(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void Salir(object sender, RoutedEventArgs e)
         {
-            
+            this.Close();
         }
+
 
     }
 }

@@ -17,18 +17,22 @@ namespace AUTOCAR.VistaModelo
         public RelayCommand cmd_Borrar { get; set; }
         public RelayCommand cmd_Modifica { get; set; }
 
-        public Cobro Cobro { get { return cobro; } set { Cobro = value; OnPropertyChanged(); } }
+        public Cobro Cobro { get { return cobro; } set { cobro = value; OnPropertyChanged(); } }
         private Cobro cobro;
 
 
         public ObservableCollection<Cobro> Lista { get { return lista; } set { lista = value; OnPropertyChanged(); } }
         private ObservableCollection<Cobro> lista = new ObservableCollection<Cobro>();
 
-        public ObservableCollection<Cliente> ListaR { get { return listaR; } set { listaR = value; OnPropertyChanged(); } }
-        private ObservableCollection<Cliente> listaR = new ObservableCollection<Cliente>();
+        public ObservableCollection<Cliente> ListaC { get { return listaC; } set { listaC = value; OnPropertyChanged(); } }
+        private ObservableCollection<Cliente> listaC = new ObservableCollection<Cliente>();
 
-        public ObservableCollection<Vehiculo> ListaC { get { return listaC; } set { listaC = value; OnPropertyChanged(); } }
-        private ObservableCollection<Vehiculo> listaC = new ObservableCollection<Vehiculo>();
+        public ObservableCollection<Vehiculo> ListaV { get { return listaV; } set { listaV = value; OnPropertyChanged(); } }
+        private ObservableCollection<Vehiculo> listaV = new ObservableCollection<Vehiculo>();
+
+        public ObservableCollection<Tipo_Pago> ListaT { get { return listaT; } set { listaT = value; OnPropertyChanged(); } }
+        private ObservableCollection<Tipo_Pago> listaT = new ObservableCollection<Tipo_Pago>();
+
 
 
 
@@ -44,9 +48,12 @@ namespace AUTOCAR.VistaModelo
             using (var dbc = new ConexionDbContext())
             {
                 this.Lista = new ObservableCollection<Cobro>(dbc.Cobros);
-                this.ListaR = new ObservableCollection<Cliente>(dbc.Clientes);
-                this.ListaC = new ObservableCollection<Vehiculo>(dbc.Vehiculos);
+                this.ListaC = new ObservableCollection<Cliente>(dbc.Clientes);
+                this.ListaV = new ObservableCollection<Vehiculo>(dbc.Vehiculos);
+                this.ListaT = new ObservableCollection<Tipo_Pago>(dbc.Tipo_Pagos);
             }
+
+            this.Cobro.Fecha_Cobro = DateTime.Now.Date;
 
         }
 
@@ -58,7 +65,7 @@ namespace AUTOCAR.VistaModelo
                 using (var dbc = new ConexionDbContext())
                 {
 
-                    if (this.Cobro.CobroID == 0)
+                    if (this.Cobro.ClienteID == 0)
                     {
                         MessageBox.Show("No digitó numero de Factura a insertar");
                         return;
@@ -67,6 +74,7 @@ namespace AUTOCAR.VistaModelo
                     try
                     {
                         dbc.SaveChanges();
+                        MessageBox.Show("Se agrego la venta");
                         this.Consultar();
                     }
                     catch (Exception er)
@@ -85,6 +93,9 @@ namespace AUTOCAR.VistaModelo
                 using (var dbc = new ConexionDbContext())
                 {
                     this.Lista = new ObservableCollection<Cobro>(dbc.Cobros);
+                    this.ListaC = new ObservableCollection<Cliente>(dbc.Clientes);
+                    this.ListaV = new ObservableCollection<Vehiculo>(dbc.Vehiculos);
+                    this.ListaT = new ObservableCollection<Tipo_Pago>(dbc.Tipo_Pagos);
                 }
             }
 
@@ -94,7 +105,7 @@ namespace AUTOCAR.VistaModelo
 
         public void Borrar()
         {
-            if (this.Cobro.CobroID == 0)
+            if (this.Cobro.ClienteID == 0)
             {
                 MessageBox.Show("No digitó un numero de Factura correcto a borrar");
                 return;
@@ -126,7 +137,7 @@ namespace AUTOCAR.VistaModelo
 
         public void Modifica()
         {
-            if (this.Cobro.CobroID == 0)
+            if (this.Cobro.ClienteID == 0)
             {
                 MessageBox.Show("No digitó un numero de Factura correcto a modificar");
                 return;

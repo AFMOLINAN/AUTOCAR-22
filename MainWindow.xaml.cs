@@ -2,6 +2,7 @@
 using AUTOCAR.Vistas;
 using AUTOCAR.VistaModelo;
 using AUTOCAR.Reportes;
+using AUTOCAR.Modelos;
 
 namespace AUTOCAR
 {
@@ -41,13 +42,6 @@ namespace AUTOCAR
         {
             this.Close();
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-       
         
         private void ReporteVehiculo(object sender, RoutedEventArgs e)
         {
@@ -63,7 +57,21 @@ namespace AUTOCAR
             RV.Show();
         }
 
-        
+        private void RegistroCliente(object sender, RoutedEventArgs e)
+        {
+            RegistroCliente RP = new RegistroCliente();
+            RP.ShowDialog();
+
+        }
+
+        private void Venta(object sender, RoutedEventArgs e)
+        {
+            Venta RP = new Venta();
+            RP.ShowDialog();
+
+        }
+
+
     }
         
 }
