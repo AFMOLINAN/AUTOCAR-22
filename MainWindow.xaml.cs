@@ -5,9 +5,7 @@ using AUTOCAR.Reportes;
 
 namespace AUTOCAR
 {
-    /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
-    /// </summary>
+  
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -49,11 +47,9 @@ namespace AUTOCAR
 
         }
 
-        private void Cliente(object sender, RoutedEventArgs e)
+       
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
-            RegistroCliente RV = new RegistroCliente();
-            RV.Show();
 
         }
 

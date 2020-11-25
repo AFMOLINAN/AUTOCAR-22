@@ -70,7 +70,7 @@
 
                 <StackPanel Grid.Row="1" Grid.Column="0" Margin="27,42,23,30" Name="stackPanel1" >
                     <Button  Content="Ficha Cliente"  Height="30" Margin="0,0,0,10" Click="Cliente" />
-                    <Button Content="Cobro" Height="30" Margin="0,10"  />
+                    <Button Content="Cobro" Height="30" Margin="0,10" Click="Button_Click_1"  />
                     <Button Content="Info Ventas" Height="30" Margin="0,10"  />
 
                 </StackPanel>
