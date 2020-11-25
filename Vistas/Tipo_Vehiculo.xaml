@@ -11,7 +11,9 @@
         <vm:Tipo_VehiculoVM/>
     </Window.DataContext>
 
-    <Grid Background="Orange">
+    <Grid >
+        <Image Source="/Imagenes/Fondo.jpeg" />
+
         <Border Margin="10" BorderBrush="Black" BorderThickness="5" CornerRadius="8">
             <Grid Height="248" VerticalAlignment="Top">
                 <Grid.RowDefinitions>
@@ -22,12 +24,12 @@
                 </Grid.RowDefinitions>
                 <StackPanel Grid.Row="0" >
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
-                        <TextBlock Text="Registro Tipo Vehiculo" FontSize="20" Foreground="Black" FontWeight="Bold"></TextBlock>
+                        <TextBlock Text="Registro Tipo Vehiculo" FontSize="20" Foreground="White" FontWeight="Bold"></TextBlock>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="1" >
                     <StackPanel  Orientation="Horizontal" >
-                        <Label Width="90">Tipo Vehiculo:</Label>
+                        <Label Margin="100,0,0,0" Foreground="White" Width="90">Tipo Vehiculo:</Label>
                         <TextBox Text="{Binding Tipo_Vehiculo.Tipo}" Width="186"></TextBox>
                     </StackPanel>
                 </StackPanel>

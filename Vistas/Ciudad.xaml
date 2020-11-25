@@ -11,9 +11,10 @@
         <vm1:CiudadVM/>
     </Window.DataContext>
 
-    <Grid Background="Orange">
+    <Grid ><Image Source="/Imagenes/Fondo.jpeg" />
         <Border Margin="10" BorderBrush="Black" BorderThickness="5" CornerRadius="8">
             <Grid Height="248" VerticalAlignment="Top">
+                
                 <Grid.RowDefinitions>
                     <RowDefinition Height="31"/>
                     <RowDefinition Height="31"/>
@@ -27,15 +28,15 @@
                 </StackPanel>
                 <StackPanel Grid.Row="1" >
                     <StackPanel  Orientation="Horizontal" >
-                        <Label Width="140">Nombre Ciudad:</Label>
-                        <TextBox Text="{Binding Ciudad.N_Municipio}" Width="186"></TextBox>
+                        <Label Width="140" Foreground="White" RenderTransformOrigin="3.158,0.5" Margin="100,0,0,0">Nombre Ciudad:</Label>
+                        <TextBox Text="{Binding Ciudad.N_Municipio}" Width="188"/>
                     </StackPanel>
                 </StackPanel>
 
                 <StackPanel Grid.Row="2" >
                     <StackPanel  Orientation="Horizontal" >
-                        <Label Width="140">Departamento:</Label>
-                        <ComboBox ItemsSource="{Binding  ListaD, Mode=OneWay}" SelectedValue="{Binding Ciudad.DepartamentoID}"  SelectedValuePath="DepartamentoID" Width="189">
+                        <Label Width="140" Foreground="White" Margin="100,0,0,0">Departamento:</Label>
+                        <ComboBox  ItemsSource="{Binding  ListaD, Mode=OneWay}" SelectedValue="{Binding Ciudad.DepartamentoID}"  SelectedValuePath="DepartamentoID" Width="189">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal">
@@ -85,8 +86,8 @@
                                     <ListBox.ItemTemplate>
                                         <DataTemplate>
                                             <StackPanel Orientation="Horizontal">
-                                                <TextBlock Text="{Binding N_Municipio}" Width="200" Foreground="Blue" />
-                                                <TextBlock Text="{Binding CiudadID}" Foreground="Blue"/>
+                                                <TextBlock Text="{Binding N_Municipio}" Width="200" Foreground="Black" />
+                                                <TextBlock Text="{Binding CiudadID}" Foreground="Black"/>
             
                                             </StackPanel>
                                         </DataTemplate>

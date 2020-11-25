@@ -1,7 +1,7 @@
 ﻿using System.Windows;
 using AUTOCAR.Vistas;
 using AUTOCAR.VistaModelo;
-
+using AUTOCAR.Reportes;
 
 namespace AUTOCAR
 {
@@ -36,6 +36,8 @@ namespace AUTOCAR
 
         }
 
+       
+
 
         private void Salir(object sender, RoutedEventArgs e)
         {
@@ -54,5 +56,15 @@ namespace AUTOCAR
             RV.Show();
 
         }
+
+        private void ReporteVehiculo(object sender, RoutedEventArgs e)
+        {
+            Form1 RV = new Form1();
+            RV.ShowDialog();
+          
+
+        }
+
     }
+        
 }

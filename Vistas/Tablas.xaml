@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       mc:Ignorable="d" 
       
-      Title="Tablas" Height="322.377" Width="720.87">
+      Title="Tablas" Height="295.316" Width="717.34">
 
 
 
@@ -44,7 +44,9 @@
 
 
     </Window.Resources>
-    <Grid Background="Orange">
+    <Grid >
+        <Image Source="/Imagenes/Fondo.jpeg" />
+
         <Border Margin="10" BorderBrush="Black" BorderThickness="5,5,5,5" CornerRadius="8,8,8,8">
             <Grid>
                 <Grid.RowDefinitions>
@@ -54,11 +56,7 @@
                     <RowDefinition Height="26*" />
                     <RowDefinition Height="26*" />
                     <RowDefinition Height="26*" />
-                    <RowDefinition Height="26*" />
-
-
-
-
+                    
                 </Grid.RowDefinitions>
 
                 <Grid.ColumnDefinitions>
@@ -69,7 +67,7 @@
 
                 <StackPanel Grid.Row="0" Grid.ColumnSpan="2" >
                     <StackPanel Orientation="Horizontal"  HorizontalAlignment="Center" >
-                        <TextBlock Text="Registro Vehiculos" FontSize="20" Foreground="Black" FontWeight="Bold" Width="173"/>
+                        <TextBlock Text="Registro Vehiculos" FontSize="20" Foreground="White" FontWeight="Bold" Width="173"/>
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Grid.Row="0" Grid.Column="1">
