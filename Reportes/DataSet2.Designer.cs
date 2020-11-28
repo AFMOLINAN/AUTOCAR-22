@@ -279,19 +279,17 @@ namespace AUTOCAR.Reportes {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class VehiculoDataTable : global::System.Data.TypedTableBase<VehiculoRow> {
             
-            private global::System.Data.DataColumn columnVehiculoID;
-            
             private global::System.Data.DataColumn columnPlaca;
             
             private global::System.Data.DataColumn columnModelo;
             
-            private global::System.Data.DataColumn columnCilindrada;
-            
             private global::System.Data.DataColumn columnPrecio_Nuevo;
             
-            private global::System.Data.DataColumn columnPrecio_Mercado;
+            private global::System.Data.DataColumn columnTipo_Proveedor;
             
-            private global::System.Data.DataColumn columnEstadoID;
+            private global::System.Data.DataColumn columnNombre;
+            
+            private global::System.Data.DataColumn columnEstado_Vehiculo;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -328,14 +326,6 @@ namespace AUTOCAR.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn VehiculoIDColumn {
-                get {
-                    return this.columnVehiculoID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn PlacaColumn {
                 get {
                     return this.columnPlaca;
@@ -352,14 +342,6 @@ namespace AUTOCAR.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn CilindradaColumn {
-                get {
-                    return this.columnCilindrada;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn Precio_NuevoColumn {
                 get {
                     return this.columnPrecio_Nuevo;
@@ -368,17 +350,25 @@ namespace AUTOCAR.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn Precio_MercadoColumn {
+            public global::System.Data.DataColumn Tipo_ProveedorColumn {
                 get {
-                    return this.columnPrecio_Mercado;
+                    return this.columnTipo_Proveedor;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn EstadoIDColumn {
+            public global::System.Data.DataColumn NombreColumn {
                 get {
-                    return this.columnEstadoID;
+                    return this.columnNombre;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn Estado_VehiculoColumn {
+                get {
+                    return this.columnEstado_Vehiculo;
                 }
             }
             
@@ -419,26 +409,18 @@ namespace AUTOCAR.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VehiculoRow AddVehiculoRow(string Placa, int Modelo, int Cilindrada, int Precio_Nuevo, int Precio_Mercado, int EstadoID) {
+            public VehiculoRow AddVehiculoRow(string Placa, int Modelo, int Precio_Nuevo, string Tipo_Proveedor, string Nombre, string Estado_Vehiculo) {
                 VehiculoRow rowVehiculoRow = ((VehiculoRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
                         Placa,
                         Modelo,
-                        Cilindrada,
                         Precio_Nuevo,
-                        Precio_Mercado,
-                        EstadoID};
+                        Tipo_Proveedor,
+                        Nombre,
+                        Estado_Vehiculo};
                 rowVehiculoRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowVehiculoRow);
                 return rowVehiculoRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public VehiculoRow FindByVehiculoID(int VehiculoID) {
-                return ((VehiculoRow)(this.Rows.Find(new object[] {
-                            VehiculoID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -458,46 +440,35 @@ namespace AUTOCAR.Reportes {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnVehiculoID = base.Columns["VehiculoID"];
                 this.columnPlaca = base.Columns["Placa"];
                 this.columnModelo = base.Columns["Modelo"];
-                this.columnCilindrada = base.Columns["Cilindrada"];
                 this.columnPrecio_Nuevo = base.Columns["Precio_Nuevo"];
-                this.columnPrecio_Mercado = base.Columns["Precio_Mercado"];
-                this.columnEstadoID = base.Columns["EstadoID"];
+                this.columnTipo_Proveedor = base.Columns["Tipo_Proveedor"];
+                this.columnNombre = base.Columns["Nombre"];
+                this.columnEstado_Vehiculo = base.Columns["Estado_Vehiculo"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnVehiculoID = new global::System.Data.DataColumn("VehiculoID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnVehiculoID);
                 this.columnPlaca = new global::System.Data.DataColumn("Placa", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlaca);
                 this.columnModelo = new global::System.Data.DataColumn("Modelo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnModelo);
-                this.columnCilindrada = new global::System.Data.DataColumn("Cilindrada", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCilindrada);
                 this.columnPrecio_Nuevo = new global::System.Data.DataColumn("Precio_Nuevo", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPrecio_Nuevo);
-                this.columnPrecio_Mercado = new global::System.Data.DataColumn("Precio_Mercado", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnPrecio_Mercado);
-                this.columnEstadoID = new global::System.Data.DataColumn("EstadoID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnEstadoID);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnVehiculoID}, true));
-                this.columnVehiculoID.AutoIncrement = true;
-                this.columnVehiculoID.AutoIncrementSeed = -1;
-                this.columnVehiculoID.AutoIncrementStep = -1;
-                this.columnVehiculoID.AllowDBNull = false;
-                this.columnVehiculoID.ReadOnly = true;
-                this.columnVehiculoID.Unique = true;
+                this.columnTipo_Proveedor = new global::System.Data.DataColumn("Tipo_Proveedor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTipo_Proveedor);
+                this.columnNombre = new global::System.Data.DataColumn("Nombre", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnNombre);
+                this.columnEstado_Vehiculo = new global::System.Data.DataColumn("Estado_Vehiculo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEstado_Vehiculo);
                 this.columnPlaca.MaxLength = 2147483647;
                 this.columnModelo.AllowDBNull = false;
-                this.columnCilindrada.AllowDBNull = false;
                 this.columnPrecio_Nuevo.AllowDBNull = false;
-                this.columnPrecio_Mercado.AllowDBNull = false;
-                this.columnEstadoID.AllowDBNull = false;
+                this.columnTipo_Proveedor.MaxLength = 2147483647;
+                this.columnNombre.MaxLength = 2147483647;
+                this.columnEstado_Vehiculo.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -640,17 +611,6 @@ namespace AUTOCAR.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int VehiculoID {
-                get {
-                    return ((int)(this[this.tableVehiculo.VehiculoIDColumn]));
-                }
-                set {
-                    this[this.tableVehiculo.VehiculoIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string Placa {
                 get {
                     try {
@@ -678,17 +638,6 @@ namespace AUTOCAR.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Cilindrada {
-                get {
-                    return ((int)(this[this.tableVehiculo.CilindradaColumn]));
-                }
-                set {
-                    this[this.tableVehiculo.CilindradaColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int Precio_Nuevo {
                 get {
                     return ((int)(this[this.tableVehiculo.Precio_NuevoColumn]));
@@ -700,23 +649,49 @@ namespace AUTOCAR.Reportes {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int Precio_Mercado {
+            public string Tipo_Proveedor {
                 get {
-                    return ((int)(this[this.tableVehiculo.Precio_MercadoColumn]));
+                    try {
+                        return ((string)(this[this.tableVehiculo.Tipo_ProveedorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Tipo_Proveedor\' de la tabla \'Vehiculo\' es DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableVehiculo.Precio_MercadoColumn] = value;
+                    this[this.tableVehiculo.Tipo_ProveedorColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int EstadoID {
+            public string Nombre {
                 get {
-                    return ((int)(this[this.tableVehiculo.EstadoIDColumn]));
+                    try {
+                        return ((string)(this[this.tableVehiculo.NombreColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Nombre\' de la tabla \'Vehiculo\' es DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tableVehiculo.EstadoIDColumn] = value;
+                    this[this.tableVehiculo.NombreColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string Estado_Vehiculo {
+                get {
+                    try {
+                        return ((string)(this[this.tableVehiculo.Estado_VehiculoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Estado_Vehiculo\' de la tabla \'Vehiculo\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableVehiculo.Estado_VehiculoColumn] = value;
                 }
             }
             
@@ -730,6 +705,42 @@ namespace AUTOCAR.Reportes {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetPlacaNull() {
                 this[this.tableVehiculo.PlacaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTipo_ProveedorNull() {
+                return this.IsNull(this.tableVehiculo.Tipo_ProveedorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTipo_ProveedorNull() {
+                this[this.tableVehiculo.Tipo_ProveedorColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsNombreNull() {
+                return this.IsNull(this.tableVehiculo.NombreColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetNombreNull() {
+                this[this.tableVehiculo.NombreColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsEstado_VehiculoNull() {
+                return this.IsNull(this.tableVehiculo.Estado_VehiculoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetEstado_VehiculoNull() {
+                this[this.tableVehiculo.Estado_VehiculoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -892,42 +903,13 @@ namespace AUTOCAR.Reportes.DataSet2TableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "Vehiculo";
-            tableMapping.ColumnMappings.Add("VehiculoID", "VehiculoID");
             tableMapping.ColumnMappings.Add("Placa", "Placa");
             tableMapping.ColumnMappings.Add("Modelo", "Modelo");
-            tableMapping.ColumnMappings.Add("Cilindrada", "Cilindrada");
             tableMapping.ColumnMappings.Add("Precio_Nuevo", "Precio_Nuevo");
-            tableMapping.ColumnMappings.Add("Precio_Mercado", "Precio_Mercado");
-            tableMapping.ColumnMappings.Add("EstadoID", "EstadoID");
+            tableMapping.ColumnMappings.Add("Tipo_Proveedor", "Tipo_Proveedor");
+            tableMapping.ColumnMappings.Add("Nombre", "Nombre");
+            tableMapping.ColumnMappings.Add("Estado_Vehiculo", "Estado_Vehiculo");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [Vehiculo] WHERE (([VehiculoID] = @Original_VehiculoID) AND ([Modelo] = @Original_Modelo) AND ([Cilindrada] = @Original_Cilindrada) AND ([Precio_Nuevo] = @Original_Precio_Nuevo) AND ([Precio_Mercado] = @Original_Precio_Mercado) AND ([EstadoID] = @Original_EstadoID))";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VehiculoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VehiculoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Modelo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modelo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cilindrada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cilindrada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Precio_Nuevo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio_Nuevo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Precio_Mercado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio_Mercado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstadoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [Vehiculo] SET [Placa] = @Placa, [Modelo] = @Modelo, [Cilindrada] = @Cilindrada, [Precio_Nuevo] = @Precio_Nuevo, [Precio_Mercado] = @Precio_Mercado, [EstadoID] = @EstadoID WHERE (([VehiculoID] = @Original_VehiculoID) AND ([Modelo] = @Original_Modelo) AND ([Cilindrada] = @Original_Cilindrada) AND ([Precio_Nuevo] = @Original_Precio_Nuevo) AND ([Precio_Mercado] = @Original_Precio_Mercado) AND ([EstadoID] = @Original_EstadoID));
-SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, EstadoID FROM Vehiculo WHERE (VehiculoID = @VehiculoID)";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Placa", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Placa", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Modelo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modelo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Cilindrada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cilindrada", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio_Nuevo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio_Nuevo", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Precio_Mercado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio_Mercado", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EstadoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_VehiculoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "VehiculoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Modelo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Modelo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Cilindrada", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Cilindrada", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Precio_Nuevo", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio_Nuevo", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Precio_Mercado", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Precio_Mercado", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EstadoID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EstadoID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@VehiculoID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "VehiculoID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -943,8 +925,10 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT        VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado" +
-                ", EstadoID\r\nFROM            Vehiculo";
+            this._commandCollection[0].CommandText = @"SELECT        Vehiculo.Placa, Vehiculo.Modelo, Vehiculo.Precio_Nuevo, Proveedor.Tipo_Proveedor, Proveedor.Nombre, Estado.Estado_Vehiculo
+FROM            Vehiculo INNER JOIN
+                         Proveedor ON Vehiculo.ProveedorID = Proveedor.ProveedorID INNER JOIN
+                         Estado ON Vehiculo.EstadoID = Estado.EstadoID";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -971,109 +955,6 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet2.VehiculoDataTable dataTable) {
-            return this.Adapter.Update(dataTable);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DataSet2 dataSet) {
-            return this.Adapter.Update(dataSet, "Vehiculo");
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow dataRow) {
-            return this.Adapter.Update(new global::System.Data.DataRow[] {
-                        dataRow});
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(global::System.Data.DataRow[] dataRows) {
-            return this.Adapter.Update(dataRows);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_VehiculoID, int Original_Modelo, int Original_Cilindrada, int Original_Precio_Nuevo, int Original_Precio_Mercado, int Original_EstadoID) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_VehiculoID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_Modelo));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_Cilindrada));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_Precio_Nuevo));
-            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_Precio_Mercado));
-            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_EstadoID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Placa, int Modelo, int Cilindrada, int Precio_Nuevo, int Precio_Mercado, int EstadoID, int Original_VehiculoID, int Original_Modelo, int Original_Cilindrada, int Original_Precio_Nuevo, int Original_Precio_Mercado, int Original_EstadoID, int VehiculoID) {
-            if ((Placa == null)) {
-                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Placa));
-            }
-            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Modelo));
-            this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(Cilindrada));
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Precio_Nuevo));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Precio_Mercado));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(EstadoID));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_VehiculoID));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_Modelo));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Cilindrada));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Precio_Nuevo));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_Precio_Mercado));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_EstadoID));
-            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(VehiculoID));
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Placa, int Modelo, int Cilindrada, int Precio_Nuevo, int Precio_Mercado, int EstadoID, int Original_VehiculoID, int Original_Modelo, int Original_Cilindrada, int Original_Precio_Nuevo, int Original_Precio_Mercado, int Original_EstadoID) {
-            return this.Update(Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, EstadoID, Original_VehiculoID, Original_Modelo, Original_Cilindrada, Original_Precio_Nuevo, Original_Precio_Mercado, Original_EstadoID, Original_VehiculoID);
-        }
     }
     
     /// <summary>
@@ -1088,8 +969,6 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
         
         private UpdateOrderOption _updateOrder;
         
-        private VehiculoTableAdapter _vehiculoTableAdapter;
-        
         private bool _backupDataSetBeforeUpdate;
         
         private global::System.Data.IDbConnection _connection;
@@ -1102,20 +981,6 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
             }
             set {
                 this._updateOrder = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
-            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
-            "a", "System.Drawing.Design.UITypeEditor")]
-        public VehiculoTableAdapter VehiculoTableAdapter {
-            get {
-                return this._vehiculoTableAdapter;
-            }
-            set {
-                this._vehiculoTableAdapter = value;
             }
         }
         
@@ -1138,10 +1003,6 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._vehiculoTableAdapter != null) 
-                            && (this._vehiculoTableAdapter.Connection != null))) {
-                    return this._vehiculoTableAdapter.Connection;
-                }
                 return null;
             }
             set {
@@ -1155,9 +1016,6 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._vehiculoTableAdapter != null)) {
-                    count = (count + 1);
-                }
                 return count;
             }
         }
@@ -1169,15 +1027,6 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateUpdatedRows(DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._vehiculoTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.Vehiculo.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
-                updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
-                if (((updatedRows != null) 
-                            && (0 < updatedRows.Length))) {
-                    result = (result + this._vehiculoTableAdapter.Update(updatedRows));
-                    allChangedRows.AddRange(updatedRows);
-                }
-            }
             return result;
         }
         
@@ -1188,14 +1037,6 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateInsertedRows(DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._vehiculoTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.Vehiculo.Select(null, null, global::System.Data.DataViewRowState.Added);
-                if (((addedRows != null) 
-                            && (0 < addedRows.Length))) {
-                    result = (result + this._vehiculoTableAdapter.Update(addedRows));
-                    allAddedRows.AddRange(addedRows);
-                }
-            }
             return result;
         }
         
@@ -1206,14 +1047,6 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private int UpdateDeletedRows(DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._vehiculoTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.Vehiculo.Select(null, null, global::System.Data.DataViewRowState.Deleted);
-                if (((deletedRows != null) 
-                            && (0 < deletedRows.Length))) {
-                    result = (result + this._vehiculoTableAdapter.Update(deletedRows));
-                    allChangedRows.AddRange(deletedRows);
-                }
-            }
             return result;
         }
         
@@ -1253,11 +1086,6 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._vehiculoTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._vehiculoTableAdapter.Connection) == false))) {
-                throw new global::System.ArgumentException("Todos los TableAdapters administrados por un TableAdapterManager deben usar la mi" +
-                        "sma cadena de conexión.");
-            }
             global::System.Data.IDbConnection workConnection = this.Connection;
             if ((workConnection == null)) {
                 throw new global::System.ApplicationException("TableAdapterManager no contiene información de conexión. Establezca cada propieda" +
@@ -1290,15 +1118,6 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._vehiculoTableAdapter != null)) {
-                    revertConnections.Add(this._vehiculoTableAdapter, this._vehiculoTableAdapter.Connection);
-                    this._vehiculoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._vehiculoTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._vehiculoTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._vehiculoTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._vehiculoTableAdapter.Adapter);
-                    }
-                }
                 // 
                 //---- Perform updates -----------
                 //
@@ -1356,10 +1175,6 @@ SELECT VehiculoID, Placa, Modelo, Cilindrada, Precio_Nuevo, Precio_Mercado, Esta
             finally {
                 if (workConnOpened) {
                     workConnection.Close();
-                }
-                if ((this._vehiculoTableAdapter != null)) {
-                    this._vehiculoTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._vehiculoTableAdapter]));
-                    this._vehiculoTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

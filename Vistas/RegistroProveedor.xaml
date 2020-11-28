@@ -92,7 +92,7 @@
                 
                 <StackPanel Grid.Row="7" Grid.Column="0">
                     <StackPanel  Orientation="Horizontal" Margin="0,0,85,0" >
-                        <Label Margin="85,0,0,0" Foreground="White" Width="110">Estado Compra</Label>
+                        <Label Margin="85,0,0,0" Foreground="White" Width="110">Ciudad</Label>
                         <ComboBox ItemsSource="{Binding  ListaD, Mode=OneWay}" SelectedValue="{Binding Proveedor.CiudadID}"  SelectedValuePath="CiudadID" Width="163">
                             <ComboBox.ItemTemplate>
                                 <DataTemplate>

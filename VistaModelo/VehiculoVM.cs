@@ -109,6 +109,7 @@ namespace AUTOCAR.VistaModelo
                 vehiculo.Modelo = this.Vehiculo.Modelo;
                 vehiculo.Cilindrada = this.Vehiculo.Cilindrada;
                 vehiculo.HP = this.Vehiculo.HP;
+                vehiculo.EstadoID = this.Vehiculo.EstadoID;
                 vehiculo.Precio_Nuevo = this.Vehiculo.Precio_Nuevo;
                 vehiculo.Precio_Mercado = this.Vehiculo.Precio_Mercado;
                 vehiculo.Precio_Concesionario = this.Vehiculo.Precio_Concesionario;

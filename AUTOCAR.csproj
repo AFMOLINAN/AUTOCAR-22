@@ -188,6 +188,10 @@
     <Compile Include="Migrations\202011252106232_Inicial4.designer.cs">
       <DependentUpon>202011252106232_Inicial4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202011252218357_Inicial5.cs" />
+    <Compile Include="Migrations\202011252218357_Inicial5.designer.cs">
+      <DependentUpon>202011252218357_Inicial5.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelos\Ciudad.cs" />
     <Compile Include="Modelos\Cliente.cs" />
@@ -212,6 +216,12 @@
     </Compile>
     <Compile Include="Reportes\Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
     </Compile>
     <Compile Include="VistaModelo\PagoVM.cs" />
     <Compile Include="Vistas\Pago.xaml.cs">
@@ -380,6 +390,9 @@
     <EmbeddedResource Include="Migrations\202011252106232_Inicial4.resx">
       <DependentUpon>202011252106232_Inicial4.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011252218357_Inicial5.resx">
+      <DependentUpon>202011252218357_Inicial5.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -390,8 +403,12 @@
     <EmbeddedResource Include="Reportes\Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Report1.rdlc" />
     <EmbeddedResource Include="Reportes\Report2.rdlc" />
+    <EmbeddedResource Include="Reportes\Report3.rdlc" />
     <None Include="BDAUTOCARDataSet.xsc">
       <DependentUpon>BDAUTOCARDataSet.xsd</DependentUpon>
     </None>

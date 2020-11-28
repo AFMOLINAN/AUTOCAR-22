@@ -11,6 +11,8 @@ namespace AUTOCAR.VistaModelo
         public RelayCommand cmd_Insertar { get; set; }
         public RelayCommand cmd_Consultar { get; set; }
 
+        public RelayCommand cmd_Modifica { get; set; }
+
         //public bool EsModifica { get; set; }
 
         public Pago Pago { get { return pago; } set { pago = value; OnPropertyChanged(); } }
@@ -32,6 +34,7 @@ namespace AUTOCAR.VistaModelo
         {
             this.cmd_Insertar = new RelayCommand(p => this.Insertar());
             this.cmd_Consultar = new RelayCommand(p => this.Consultar());
+            this.cmd_Modifica = new RelayCommand(p => this.Modifica());
             this.Pago = new Pago();
 
             using (var dbc = new ConexionDbContext())
@@ -79,6 +82,32 @@ namespace AUTOCAR.VistaModelo
                 this.ListaP = new ObservableCollection<Proveedor>(dbc.Proveedores);
                 this.ListaV = new ObservableCollection<Vehiculo>(dbc.Vehiculos);
                 this.ListaT = new ObservableCollection<Tipo_Pago>(dbc.Tipo_Pagos);
+            }
+        }
+
+        public void Modifica()
+        {
+            if (this.Pago.Fecha_Pago == null)
+            {
+                MessageBox.Show("No digitó el pago a modificar actualizar");
+                return;
+            }
+            using (var dbc = new ConexionDbContext())
+            {
+                var pago = dbc.Pagos.Find(this.Pago.PagoID);
+                pago.PagoID = this.Pago.PagoID;
+                pago.Valor_Compra = this.Pago.Valor_Compra;
+                try
+                {
+                    dbc.SaveChanges();
+                    this.Consultar();
+                }
+                catch (Exception er)
+                {
+                    MessageBox.Show("Error " + er.Message);
+                    if (er.InnerException != null)
+                        MessageBox.Show("Error " + er.InnerException.Message);
+                }
             }
         }
     }
